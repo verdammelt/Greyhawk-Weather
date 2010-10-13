@@ -1,0 +1,21 @@
+
+* DONE determine base temp given the month
+
+* calc date's temp range given date
+* determine if there is precip for a date
+* determine what sort of precip it is
+* determine if there is record high/low
+* need to calc diff in base temp caused by latitude
+* need to calc diff in sun-rise/-set time caused by longitude
+* need to calc diff in base temp caused by altitude
+* need to calc current weather condition (sunny/partly-cloudy/cloudy)
+* phase of moons for date
+* sunrise/sunset times for date
+* modify weather given terrain
+* report wind chill temp
+* wind speed / direction
+* report high wind effect table
+* check for requirements on precip
+* report affects of precip
+* humidity
+

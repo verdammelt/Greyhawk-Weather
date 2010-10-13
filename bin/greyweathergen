@@ -1,0 +1,12 @@
+#!/usr/bin/ruby -I ./lib -s
+
+# arbitrary defaults: Weather will be generated for 1st of Planting
+
+$day ||= 1
+$month ||= 4
+
+require 'GreyhawkWeatherGenerator'
+
+weather = GreyhawkWeatherGenerator.new.generate $day, $month
+
+weather.dump
