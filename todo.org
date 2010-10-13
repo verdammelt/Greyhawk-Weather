@@ -1,6 +1,9 @@
 
 * DONE determine base temp given the month
-* TODO calc date's temp range given date
+* DONE calc date's temp range given date
+
+* Need a good way to store/define the baseline data - hardcoded in the baselinedata file is ugly!
+
 * determine if there is precip for a date
 * determine what sort of precip it is
 * determine if there is record high/low
