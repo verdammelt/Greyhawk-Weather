@@ -20,4 +20,10 @@ class TestDieRoller < Test::Unit::TestCase
     $next_defined_random_number = 0
     assert_equal(DieRoller.new.roll(6), 1, "should use 1..N range")
   end
+
+  def test_applies_modifier_if_given
+    $next_defined_random_number = 1
+    assert_equal(DieRoller.new.roll(6, +2), 4, "Should have added the +2")
+    assert_equal(DieRoller.new.roll(6, -3), -1, "Should have added the -3")
+  end
 end

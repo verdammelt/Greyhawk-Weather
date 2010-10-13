@@ -1,7 +1,6 @@
 
 * DONE determine base temp given the month
-
-* calc date's temp range given date
+* TODO calc date's temp range given date
 * determine if there is precip for a date
 * determine what sort of precip it is
 * determine if there is record high/low
