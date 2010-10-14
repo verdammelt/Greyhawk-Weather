@@ -1,10 +1,10 @@
 require 'baselinedata'
 require 'dieroller'
-require 'weather'
+require 'weathergenerator'
 
 class GreyhawkWeatherGenerator
-  def generate (month, dieroller = DieRoller.new)
-    Weather.new BaselineData.new.month(month), dieroller
+  def create_weather_generator (month, num_days = 1, dieroller = DieRoller.new)
+    WeatherGenerator.new BaselineData.new, month, num_days, dieroller
   end
 end
 

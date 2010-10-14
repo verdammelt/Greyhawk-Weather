@@ -9,7 +9,7 @@
 * get weather for multiple days
 ** DONE remove current 'day' parameter
 ** add numdays parameter
-** get weather from beginning of month for that many days
+** DONE get weather from beginning of month for that many days
 
 * handle getting number of days overlapping with another month
 * need to calc current weather condition (sunny/partly-cloudy/cloudy)
