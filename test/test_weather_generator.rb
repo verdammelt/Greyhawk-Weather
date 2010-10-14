@@ -23,7 +23,8 @@ end
 
 class TestWeatherGenerator < Test::Unit::TestCase
   def setup
-    @testbaseline = TestBaselineData.new [{ :base => 10, :range => { :high => [4, 0], :low => [4, 0] }}]
+    @testbaseline = TestBaselineData.new [{ :base => 10, :range => { :high => [4, 0], :low => [4, 0] }},
+                                          { :base => 20, :range => { :high => [4, 0], :low => [4, 0] }}]
   end
 
   def test_generator_creates_num_days_of_weather
@@ -46,5 +47,18 @@ class TestWeatherGenerator < Test::Unit::TestCase
     generator = WeatherGenerator.new @testbaseline, 1, 1, IncrementingDieRoller.new
     weather = generator.days[0]
     assert_equal(weather, generator.days[0], "Each access of days should return equal data")
+  end
+  
+  def test_generated_days_cross_month_boundaries
+    generator = WeatherGenerator.new @testbaseline, 1, 31, IncrementingDieRoller.new
+    unique_base_temps = generator.days.collect{ |d| d.base_temperature}.uniq
+    assert_equal(2, unique_base_temps.length, "Not all base temps should be the same")
+    assert_equal(28, generator.days.select{ |d| d.base_temperature == 10}.length, "Should have 28 items from the first month")
+    assert_equal(3, generator.days.select{ |d| d.base_temperature == 20}.length, "Should have 3 items from the first month")
+  end
+  
+  def test_months_wrap_around_if_past_end_of_year
+    generator = WeatherGenerator.new @testbaseline, 2, 29, IncrementingDieRoller.new
+    assert_equal(10, generator.days.last.base_temperature, "Last one should be first month")
   end
 end
