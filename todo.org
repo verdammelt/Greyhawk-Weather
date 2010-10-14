@@ -2,8 +2,9 @@
 * DONE determine base temp given the month
 * DONE calc date's temp range given date
 
-* Need a good way to store/define the baseline data - hardcoded in the baselinedata file is ugly!
+* DONE Need a good way to store/define the baseline data - hardcoded in the baselinedata file is ugly!
 
+* get weather for multiple days
 * determine if there is precip for a date
 * determine what sort of precip it is
 * determine if there is record high/low
