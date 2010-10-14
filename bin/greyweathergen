@@ -2,12 +2,11 @@
 
 # arbitrary defaults: Weather will be generated for 1st of Planting
 
-$day ||= 1
 $month ||= 4
 
 require 'YAML'
 require 'GreyhawkWeatherGenerator'
 
-weather = GreyhawkWeatherGenerator.new.generate $day.to_i, $month.to_i
+weather = GreyhawkWeatherGenerator.new.generate $month.to_i
 
 weather.dump

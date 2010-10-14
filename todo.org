@@ -4,14 +4,21 @@
 
 * DONE Need a good way to store/define the baseline data - hardcoded in the baselinedata file is ugly!
 
+* DONE add a readme file to make github happy.
+
 * get weather for multiple days
+** DONE remove current 'day' parameter
+** add numdays parameter
+** get weather from beginning of month for that many days
+
+* handle getting number of days overlapping with another month
+* need to calc current weather condition (sunny/partly-cloudy/cloudy)
 * determine if there is precip for a date
 * determine what sort of precip it is
 * determine if there is record high/low
 * need to calc diff in base temp caused by latitude
 * need to calc diff in sun-rise/-set time caused by longitude
 * need to calc diff in base temp caused by altitude
-* need to calc current weather condition (sunny/partly-cloudy/cloudy)
 * phase of moons for date
 * sunrise/sunset times for date
 * modify weather given terrain
