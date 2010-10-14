@@ -9,8 +9,7 @@
 ** DONE remove current 'day' parameter
 ** DONE add numdays parameter
 ** DONE get weather from beginning of month for that many days
-
-* TODO handle getting number of days overlapping with another month
+* DONE handle getting number of days overlapping with another month
 
 * need to calc current weather condition (sunny/partly-cloudy/cloudy)
 * determine if there is precip for a date
