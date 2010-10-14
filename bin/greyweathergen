@@ -5,8 +5,9 @@
 $day ||= 1
 $month ||= 4
 
+require 'YAML'
 require 'GreyhawkWeatherGenerator'
 
-weather = GreyhawkWeatherGenerator.new.generate $day, $month
+weather = GreyhawkWeatherGenerator.new.generate $day.to_i, $month.to_i
 
 weather.dump

@@ -1,0 +1,60 @@
+--- 
+- :base: 32
+  :range:
+    :high: [10, 0]
+    :low: [20, 0]
+
+- :base: 34
+  :range:
+    :high: [6, 4]
+    :low: [10, 4]
+
+- :base: 42
+  :range:
+    :high: [8, 4]
+    :low: [10, 4]
+
+- :base: 52
+  :range:
+    :high: [10, 6]
+    :low: [8, 4]
+
+- :base: 63
+  :range:
+    :high: [10, 6]
+    :low: [10, 6]
+
+- :base: 71
+  :range:
+    :high: [8, 8]
+    :low: [6, 6]
+
+- :base: 77
+  :range:
+    :high: [6, 4]
+    :low: [6, 6]
+
+- :base: 75
+  :range:
+    :high: [4, 6]
+    :low: [6, 6]
+
+- :base: 68
+  :range:
+    :high: [8, 6]
+    :low:  [8, 6]
+
+- :base: 57
+  :range:
+    :high: [10, 5]
+    :low: [10, 5]
+
+- :base: 46
+  :range:
+    :high: [10, 6]
+    :low: [10, 4]
+
+- :base: 33
+  :range:
+    :high: [8, 5]
+    :low: [20, 0]
