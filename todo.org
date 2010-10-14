@@ -5,10 +5,9 @@
 * DONE Need a good way to store/define the baseline data - hardcoded in the baselinedata file is ugly!
 
 * DONE add a readme file to make github happy.
-
-* get weather for multiple days
+* DONE get weather for multiple days
 ** DONE remove current 'day' parameter
-** add numdays parameter
+** DONE add numdays parameter
 ** DONE get weather from beginning of month for that many days
 
 * handle getting number of days overlapping with another month
