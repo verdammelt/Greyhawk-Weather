@@ -39,7 +39,7 @@ class TestWeatherGenerator < Test::Unit::TestCase
     generator = WeatherGenerator.new @testbaseline, 1, 3, IncrementingDieRoller.new
     assert_equal([10, 10, 10], generator.days.collect{ |d| d.base_temperature }, 
                  "Each item in days should have base temperatore")
-    assert_equal([9..12, 7..14, 5..16], generator.days.collect{ |d| d.temperature_range }, 
+    assert_equal([9..12, 6..15, 3..18], generator.days.collect{ |d| d.temperature_range }, 
                  "Each item in days should have calculated temperature range")
   end
   
