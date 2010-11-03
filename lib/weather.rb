@@ -16,7 +16,7 @@ class Weather
       Range.new(month.temperature - dieroller.roll(low_range[0], low_range[1]),
                 month.temperature + dieroller.roll(high_range[0], high_range[1]))
 
-    @sky_conditions = month.conditions(dieroller.roll(100, 0))
+    @sky_conditions = month.sky_conditions(dieroller.roll(100, 0))
   end
   
   def dump

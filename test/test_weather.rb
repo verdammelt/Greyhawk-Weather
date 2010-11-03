@@ -30,6 +30,6 @@ class TestWeather < Test::Unit::TestCase
 
   private
   def create_month
-    Month.new(13, {:high => [10, 6], :low => [8, 4]}, { :clear => (0..34), :partly_cloudy => (35..70), :cloudy => (71..99)})
+    Month.new(13, {:high => [10, 6], :low => [8, 4]}, SkyConditions.new((01..23), (24..50), (51..100)))
   end
 end
