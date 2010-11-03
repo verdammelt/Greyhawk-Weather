@@ -1,4 +1,8 @@
 
+require 'temperaturerange'
+require 'skyconditions'
+require 'month'
+
 class BaselineData
   def initialize
     @all_data = YAML.load_file("./data/baselinedata.yml")
@@ -10,6 +14,6 @@ class BaselineData
 
   def month(monthnum)
     month_data = @all_data[monthnum -1]
-    Month.new month_data[:base], month_data[:range]
+    Month.new month_data[:temp_range], month_data[:sky_conditions]
   end
 end
