@@ -8,9 +8,13 @@
 ** DONE get weather from beginning of month for that many days
 * DONE handle getting number of days overlapping with another month
 * DONE need to calc current weather condition (sunny/partly-cloudy/cloudy)
-* TODO determine if there is precip for a date
-** TODO add to baseline and add acceptance test.
-* determine what sort of precip it is
+* DONE determine if there is precip for a date
+** DONE add to baseline and add acceptance test.
+* TODO determine what sort of precip it is
+** TODO just baseline data of precip
+** TODO special precip too
+** TODO report effects of precip
+** TODO determine continuing precip
 * determine if there is record high/low
 * need to calc diff in base temp caused by latitude
 * need to calc diff in sun-rise/-set time caused by longitude

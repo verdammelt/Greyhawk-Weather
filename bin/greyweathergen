@@ -8,6 +8,6 @@ $numdays ||= 7
 require 'YAML'
 require 'GreyhawkWeatherGenerator'
 
-weather_generator = GreyhawkWeatherGenerator.new.create_weather_generator $month.to_i, $numdays.to_i
+weather_generator = GreyhawkWeatherGenerator.create_weather_generator $month.to_i, $numdays.to_i
 
-weather_generator.days.each { |d| d.dump }
+weather_generator.days.each { |d| p d.inspect }

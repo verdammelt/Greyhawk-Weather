@@ -3,118 +3,118 @@
     base: 32
     high_adj: [10, 0]
     low_adj: [20, 0]
-  :sky_conditions: !ruby/object:SkyConditions
-    clear_range: !ruby/range 1..23
-    partly_range: !ruby/range 24..50
-    cloudy_range: !ruby/range 51..100
+  :sky_conditions:
+    :clear: !ruby/range 24..50
+    :partly_cloudy: !ruby/range 24..50
+    :cloudy: !ruby/range 51..100
   :precipitation_chance: 46
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 34
     high_adj: [6, 4]
     low_adj: [10, 4]
-  :sky_conditions: !ruby/object:SkyConditions
-    clear_range: !ruby/range 1..25
-    partly_range: !ruby/range 26..50
-    cloudy_range: !ruby/range 51..100
+  :sky_conditions:
+    :clear: !ruby/range 1..25
+    :partly: !ruby/range 26..50
+    :cloudy: !ruby/range 51..100
   :precipitation_chance: 40
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 42
     high_adj: [8, 4]
     low_adj: [10, 4]
-  :sky_conditions: !ruby/object:SkyConditions
-    clear_range: !ruby/range 1..27
-    partly_range: !ruby/range 28..54
-    cloudy_range: !ruby/range 55..100
+  :sky_conditions:
+    :clear: !ruby/range 1..27
+    :partly: !ruby/range 28..54
+    :cloudy: !ruby/range 55..100
   :precipitation_chance: 44
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 52
     high_adj: [10, 6]
     low_adj: [8, 4]
-  :sky_conditions: !ruby/object:SkyConditions
-    clear_range: !ruby/range 1..20
-    partly_range: !ruby/range 21..55
-    cloudy_range: !ruby/range 56..100
+  :sky_conditions:
+    :clear: !ruby/range 1..20
+    :partly: !ruby/range 21..55
+    :cloudy: !ruby/range 56..100
   :precipitation_chance: 42
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 63
     high_adj: [10, 6]
     low_adj: [10, 6]
-  :sky_conditions: !ruby/object:SkyConditions
-    clear_range: !ruby/range 1..20
-    partly_range: !ruby/range 21..53
-    cloudy_range: !ruby/range 54..100
+  :sky_conditions:
+    :clear: !ruby/range 1..20
+    :partly: !ruby/range 21..53
+    :cloudy: !ruby/range 54..100
   :precipitation_chance: 42
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 71
     high_adj: [8, 8]
     low_adj: [6, 6]
-  :sky_conditions: !ruby/object:SkyConditions
-    clear_range: !ruby/range 1..20
-    partly_range: !ruby/range 21..60
-    cloudy_range: !ruby/range 61..100
+  :sky_conditions:
+    :clear: !ruby/range 1..20
+    :partly: !ruby/range 21..60
+    :cloudy: !ruby/range 61..100
   :precipitation_chance: 36
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 77
     high_adj: [6, 4]
     low_adj: [6, 6]
-  :sky_conditions: !ruby/object:SkyConditions
-    clear_range: !ruby/range 1..22
-    partly_range: !ruby/range 23..62
-    cloudy_range: !ruby/range 63..100
+  :sky_conditions:
+    :clear: !ruby/range 1..22
+    :partly: !ruby/range 23..62
+    :cloudy: !ruby/range 63..100
   :precipitation_chance: 33
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 75
     high_adj: [4, 6]
     low_adj: [6, 6]
-  :sky_conditions: !ruby/object:SkyConditions
-    clear_range: !ruby/range 1..25
-    partly_range: !ruby/range 26..60
-    cloudy_range: !ruby/range 61..100
+  :sky_conditions:
+    :clear: !ruby/range 1..25
+    :partly: !ruby/range 26..60
+    :cloudy: !ruby/range 61..100
   :precipitation_chance: 33
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 68
     high_adj: [8, 6]
     low_adj:  [8, 6]
-  :sky_conditions: !ruby/object:SkyConditions
-    clear_range: !ruby/range 1..33
-    partly_range: !ruby/range 34..54
-    cloudy_range: !ruby/range 55..100
+  :sky_conditions:
+    :clear: !ruby/range 1..33
+    :partly: !ruby/range 34..54
+    :cloudy: !ruby/range 55..100
   :precipitation_chance: 33
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 57
     high_adj: [10, 5]
     low_adj: [10, 5]
-  :sky_conditions: !ruby/object:SkyConditions
-    clear_range: !ruby/range 1..35
-    partly_range: !ruby/range 36..60
-    cloudy_range: !ruby/range 61..100
+  :sky_conditions:
+    :clear: !ruby/range 1..35
+    :partly: !ruby/range 36..60
+    :cloudy: !ruby/range 61..100
   :precipitation_chance: 36
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 46
     high_adj: [10, 6]
     low_adj: [10, 4]
-  :sky_conditions: !ruby/object:SkyConditions
-    clear_range: !ruby/range 1..20
-    partly_range: !ruby/range 21..50
-    cloudy_range: !ruby/range 51..100
+  :sky_conditions:
+    :clear: !ruby/range 1..20
+    :partly: !ruby/range 21..50
+    :cloudy: !ruby/range 51..100
   :precipitation_chance: 40
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 33
     high_adj: [8, 5]
     low_adj: [20, 0]
-  :sky_conditions: !ruby/object:SkyConditions
-    clear_range: !ruby/range 1..25
-    partly_range: !ruby/range 26..50
-    cloudy_range: !ruby/range 51..100
+  :sky_conditions:
+    :clear: !ruby/range 1..25
+    :partly: !ruby/range 26..50
+    :cloudy: !ruby/range 51..100
   :precipitation_chance: 43

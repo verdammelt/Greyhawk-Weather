@@ -1,0 +1,112 @@
+---
+!ruby/range 01..02:
+  :name: Blizzard, heavy
+  :max_temp: 10
+  :chance_to_continue: 5
+  :not_allowed_in: [:desert]
+
+!ruby/range 03..05:
+  :name: Blizzard
+  :max_temp: 20
+  :chance_to_continue: 10
+  :not_allowed_in: [:desert]
+
+!ruby/range 06..10:
+  :name: Snowstorm, heavy
+  :max_temp: 25
+  :chance_to_continue: 20
+
+!ruby/range 11..20:
+  :name: Snowstorm, light
+  :max_temp: 35
+  :chance_to_continue: 25
+  :chance_of_rainbow: 1
+
+!ruby/range 21..25:
+  :name: Sleetstorm
+  :max_temp: 35
+  :chance_to_continue: 20
+
+!ruby/range 26..27:
+  :name: Hailstorm
+  :max_temp: 65
+  :chance_to_continue: 10
+  :not_allowed_in: [:desert, :dust]
+
+!ruby/range 28..30:
+  :name: Fog, heavy
+  :min_temp: 20
+  :max_temp: 60
+  :chance_to_continue: 25
+  :chance_of_rainbow: 1
+  :not_allowed_in: [:desert, :dust]
+
+!ruby/range 31..38:
+  :name: Fog, light
+  :min_temp: 30
+  :max_temp: 70
+  :chance_to_continue: 30
+  :chance_of_rainbow: 3
+  :not_allowed_in: [:desert]
+
+!ruby/range 39..40:
+  :name: Mist
+  :min_temp: 30
+  :chance_to_continue: 15
+  :chance_of_rainbow: 10
+
+!ruby/range 41..45:
+  :name: Drizzle
+  :min_temp: 25
+  :chance_to_continue: 20
+  :chance_of_rainbow: 5
+
+!ruby/range 46..60:
+  :name: Rainstorm, light
+  :min_temp: 25
+  :chance_to_continue: 45
+  :chance_of_rainbow: 15
+
+!ruby/range 61..70:
+  :name: Rainstorm, heavy
+  :min_temp: 25
+  :chance_to_continue: 30
+  :chance_of_rainbow: 20
+
+!ruby/range 71..84:
+  :name: Thunderstorm
+  :min_temp: 30
+  :chance_to_continue: 15
+  :chance_of_rainbow: 20
+
+!ruby/range 85..89:
+  :name: Tropical storm
+  :min_temp: 40
+  :chance_to_continue: 20
+  :chance_of_rainbow: 10
+  :not_allowed_in: [:desert, :plains]
+
+!ruby/range 90..94:
+  :name: Monsoon
+  :min_temp: 55
+  :chance_to_continue: 30
+  :chance_of_rainbow: 5
+  :not_allowed_in: [:desert, :dust, :plains]
+
+!ruby/range 95..97:
+  :name: Gale
+  :min_temp: 40
+  :chance_to_continue: 15
+  :chance_of_rainbow: 10
+  :not_allowed_in: [:desert]
+
+!ruby/range 98..99:
+  :name: Hurrican or Typhoon
+  :min_temp: 55
+  :chance_to_continue: 20
+  :chance_of_rainbow: 5
+  :not_allowed_in: [:desert, :dust]
+
+!ruby/range 100..100:
+  :name: Special
+
