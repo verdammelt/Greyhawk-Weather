@@ -1,18 +1,15 @@
-
 * DONE determine base temp given the month
 * DONE calc date's temp range given date
-
 * DONE Need a good way to store/define the baseline data - hardcoded in the baselinedata file is ugly!
-
 * DONE add a readme file to make github happy.
 * DONE get weather for multiple days
 ** DONE remove current 'day' parameter
 ** DONE add numdays parameter
 ** DONE get weather from beginning of month for that many days
 * DONE handle getting number of days overlapping with another month
-
-* need to calc current weather condition (sunny/partly-cloudy/cloudy)
-* determine if there is precip for a date
+* DONE need to calc current weather condition (sunny/partly-cloudy/cloudy)
+* TODO determine if there is precip for a date
+** TODO add to baseline and add acceptance test.
 * determine what sort of precip it is
 * determine if there is record high/low
 * need to calc diff in base temp caused by latitude

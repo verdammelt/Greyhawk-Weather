@@ -7,6 +7,7 @@
     clear_range: !ruby/range 1..23
     partly_range: !ruby/range 24..50
     cloudy_range: !ruby/range 51..100
+  :precipitation_chance: 46
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 34
@@ -16,6 +17,7 @@
     clear_range: !ruby/range 1..25
     partly_range: !ruby/range 26..50
     cloudy_range: !ruby/range 51..100
+  :precipitation_chance: 40
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 42
@@ -25,6 +27,7 @@
     clear_range: !ruby/range 1..27
     partly_range: !ruby/range 28..54
     cloudy_range: !ruby/range 55..100
+  :precipitation_chance: 44
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 52
@@ -34,6 +37,7 @@
     clear_range: !ruby/range 1..20
     partly_range: !ruby/range 21..55
     cloudy_range: !ruby/range 56..100
+  :precipitation_chance: 42
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 63
@@ -43,6 +47,7 @@
     clear_range: !ruby/range 1..20
     partly_range: !ruby/range 21..53
     cloudy_range: !ruby/range 54..100
+  :precipitation_chance: 42
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 71
@@ -52,6 +57,7 @@
     clear_range: !ruby/range 1..20
     partly_range: !ruby/range 21..60
     cloudy_range: !ruby/range 61..100
+  :precipitation_chance: 36
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 77
@@ -61,6 +67,7 @@
     clear_range: !ruby/range 1..22
     partly_range: !ruby/range 23..62
     cloudy_range: !ruby/range 63..100
+  :precipitation_chance: 33
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 75
@@ -70,6 +77,7 @@
     clear_range: !ruby/range 1..25
     partly_range: !ruby/range 26..60
     cloudy_range: !ruby/range 61..100
+  :precipitation_chance: 33
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 68
@@ -79,6 +87,7 @@
     clear_range: !ruby/range 1..33
     partly_range: !ruby/range 34..54
     cloudy_range: !ruby/range 55..100
+  :precipitation_chance: 33
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 57
@@ -88,6 +97,7 @@
     clear_range: !ruby/range 1..35
     partly_range: !ruby/range 36..60
     cloudy_range: !ruby/range 61..100
+  :precipitation_chance: 36
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 46
@@ -97,6 +107,7 @@
     clear_range: !ruby/range 1..20
     partly_range: !ruby/range 21..50
     cloudy_range: !ruby/range 51..100
+  :precipitation_chance: 40
 
 - :temp_range: !ruby/object:TemperatureRange
     base: 33
@@ -106,3 +117,4 @@
     clear_range: !ruby/range 1..25
     partly_range: !ruby/range 26..50
     cloudy_range: !ruby/range 51..100
+  :precipitation_chance: 43

@@ -15,9 +15,14 @@ class TestWeather < Test::Unit::TestCase
     assert_equal(Weather.new(create_month, AvgRoller.new).sky_conditions, :partly_cloudy)
     assert_equal(Weather.new(create_month, RiggedRoller.new(14)).sky_conditions, :clear)
   end
+  
+  def test_determines_precipitation
+    assert_equal(Weather.new(create_month, RiggedRoller.new(10)).precipitation, true)
+    assert_equal(Weather.new(create_month, RiggedRoller.new(70)).precipitation, false)
+  end
 
   private
   def create_month
-    Month.new(TemperatureRange.new(13, [10,6], [8,4]), SkyConditions.new((01..23), (24..50), (51..100)))
+    Month.new(TemperatureRange.new(13, [10,6], [8,4]), SkyConditions.new((01..23), (24..50), (51..100)), 50)
   end
 end

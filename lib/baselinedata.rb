@@ -14,6 +14,6 @@ class BaselineData
 
   def month(monthnum)
     month_data = @all_data[monthnum -1]
-    Month.new month_data[:temp_range], month_data[:sky_conditions]
+    Month.new month_data[:temp_range], month_data[:sky_conditions], month_data[:precipitation_chance]
   end
 end
