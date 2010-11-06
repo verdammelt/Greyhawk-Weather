@@ -4,8 +4,8 @@ require 'weather'
 require 'skyconditions'
 require 'temperaturerange'
 
-require 'avgdieroller'
-require 'riggeddieroller'
+require 'rollers/avgdieroller'
+require 'rollers/riggeddieroller'
 
 class TestWeather < Test::Unit::TestCase
   def test_temp_range_is_calcuated_by_appropriate_die_rolls

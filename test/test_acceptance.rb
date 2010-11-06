@@ -1,5 +1,5 @@
 require 'greyhawkweathergenerator'
-require 'avgdieroller'
+require 'rollers/avgdieroller'
 
 class TestAcceptanceTests < Test::Unit::TestCase
   def test_generate_weather_for_planting

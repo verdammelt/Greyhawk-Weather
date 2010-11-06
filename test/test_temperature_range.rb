@@ -1,6 +1,6 @@
 require 'test/unit'
 
-require 'avgdieroller'
+require 'rollers/avgdieroller'
 
 require 'temperaturerange'
 
