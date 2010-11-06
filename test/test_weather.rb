@@ -1,20 +1,19 @@
 require 'test/unit'
 
 require 'weather'
-require 'skyconditions'
-require 'temperaturerange'
+require 'month'
 
-require 'rollers/avgdieroller'
-require 'rollers/riggeddieroller'
+require 'rollers/avgroller'
+require 'rollers/riggedroller'
 
 class TestWeather < Test::Unit::TestCase
   def test_temp_range_is_calcuated_by_appropriate_die_rolls
-    assert_equal(Weather.new(create_month, AvgDieRoller.new).temperature_range, 5..24)
+    assert_equal(Weather.new(create_month, AvgRoller.new).temperature_range, 5..24)
   end
   
   def test_determines_sky_conditions
-    assert_equal(Weather.new(create_month, AvgDieRoller.new).sky_conditions, :partly_cloudy)
-    assert_equal(Weather.new(create_month, RiggedDieRoller.new(14)).sky_conditions, :clear)
+    assert_equal(Weather.new(create_month, AvgRoller.new).sky_conditions, :partly_cloudy)
+    assert_equal(Weather.new(create_month, RiggedRoller.new(14)).sky_conditions, :clear)
   end
 
   private

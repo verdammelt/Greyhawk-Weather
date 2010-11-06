@@ -1,4 +1,5 @@
 require 'test/unit'
+
 require 'dieroller'
 
 $next_defined_random_number = 0
