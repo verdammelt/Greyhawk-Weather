@@ -10,4 +10,8 @@ require 'GreyhawkWeatherGenerator'
 
 weather_generator = GreyhawkWeatherGenerator.create_weather_generator $month.to_i, $numdays.to_i
 
-weather_generator.days.each { |d| p d.inspect }
+i=0
+weather_generator.days.each do |d|
+  i += 1
+  p i.to_s + ": " + d.inspect 
+end
