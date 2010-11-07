@@ -15,7 +15,8 @@
 ** TODO special precip too
 ** TODO report effects of precip
 ** TODO determine continuing precip
-* determine if there is record high/low
+* DONE determine if there is record high/low
+* duration of record high/low
 * need to calc diff in base temp caused by latitude
 * need to calc diff in sun-rise/-set time caused by longitude
 * need to calc diff in base temp caused by altitude
@@ -31,3 +32,4 @@
 * arbitrary start day
 * greyhawk calendar festivals
 * rearrange code a bit (helper classes in subdirectories etc.)
+* standardize output like my sheets

@@ -14,8 +14,8 @@ class Month
     @sky_condition.condition(dieroller.roll(100))
   end
   
-  def temp_range (dieroller)
-    @temp_range.range(dieroller)
+  def temp_range (dieroller, record_temp=nil)
+    @temp_range.range(dieroller, record_temp)
   end
   
   def precipitation (dieroller)

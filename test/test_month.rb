@@ -23,6 +23,11 @@ class TestMonth < Test::Unit::TestCase
     assert_equal((0..17), month.temp_range(RiggedRoller.new(5)))
   end
   
+  def test_handles_record_high
+    month = Month.new(TemperatureRange.new(10, [8, 2], [20, 5]), @null_sky_conditions)
+    assert_equal((14..23), month.temp_range(RiggedRoller.new(1), :high))
+  end
+  
   def test_determines_precipitation
     month = Month.new(@null_temp_range, @null_sky_conditions, 50)
     assert_equal(true, month.precipitation(RiggedRoller.new(10)))

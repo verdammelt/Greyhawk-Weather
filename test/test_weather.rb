@@ -21,6 +21,12 @@ class TestWeather < Test::Unit::TestCase
     assert_nil(Weather.new(create_month, RiggedRoller.new(70)).precipitation)
   end
   
+  def test_deals_with_record_highs
+    assert_equal(24..36, Weather.new(create_month, RiggedRoller.new(1),
+                                    PrecipitationOccurance.new({ 0..100 => PrecipitationInfo.new({ :name => "None"})}),
+                                    :high).temperature_range)
+  end
+  
   private
   def create_month
     Month.new(TemperatureRange.new(13, [10,6], [8,4]), SkyConditions.new((01..23), (24..50), (51..100)), 50)
