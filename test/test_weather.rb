@@ -27,6 +27,10 @@ class TestWeather < Test::Unit::TestCase
                                     :high).temperature_range)
   end
   
+  def test_determines_wind
+    assert_equal("9SE", Weather.new(create_month, AvgRoller.new).wind.to_s)
+  end
+  
   private
   def create_month
     Month.new(TemperatureRange.new(13, [10,6], [8,4]), SkyConditions.new((01..23), (24..50), (51..100)), 50)

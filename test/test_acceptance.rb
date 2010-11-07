@@ -5,7 +5,7 @@ require 'rollers/avgroller'
 require 'greyhawkweathergenerator'
 
 class TestAcceptanceTests < Test::Unit::TestCase
-  def ignore_test_generate_weather_for_three_days_in_planting
+  def test_generate_weather_for_three_days_in_planting
     weather_generator = GreyhawkWeatherGenerator.create_weather_generator(4, 3, AvgRoller.new)
     assert_equal(3, weather_generator.days.length, "should have generated 3 days")
   end
