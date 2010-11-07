@@ -1,12 +1,13 @@
 require 'month'
-
 require 'precipitationoccurance'
 require 'precipitationinfo'
+require 'wind'
 
 class Weather
   attr_reader :temperature_range
   attr_reader :sky_conditions
   attr_reader :precipitation
+  attr_reader :wind
   
   def initialize (month, dieroller, 
                   precipitation_occurance_chart=PrecipitationOccurance.new({ 0..100 => PrecipitationInfo.new({ :name => "None"})}),
@@ -19,12 +20,12 @@ class Weather
     if month.precipitation(dieroller)
       @precipitation = precipitation_occurance_chart[dieroller.roll(100)]
     end
+
+    @wind = Wind.new(dieroller)
   end
   
   def inspect
-    "#{@sky_conditions} day " +
-      "with #{@record_temp} temp between #{@temperature_range.begin} and #{@temperature_range.end} " +
-      "with #{@precipitation ? precipitation.name : "no precipitation"}"
+    "#{@record_temp} #{@temperature_range} #{@sky_conditions} #{@precipitation} #{@wind}"
   end
 end
 

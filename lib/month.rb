@@ -11,7 +11,7 @@ class Month
   end
   
   def sky_conditions (dieroller)
-    @sky_condition.condition(dieroller.roll(100))
+    @sky_condition.condition(dieroller)
   end
   
   def temp_range (dieroller, record_temp=nil)

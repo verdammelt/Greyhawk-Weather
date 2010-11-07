@@ -3,7 +3,7 @@ Minimum features needed to let me use the tool in my own game
 ** DONE determine base temp given the month
 ** DONE calc date's temp range given date
 ** DONE Need a good way to store/define the baseline data - hardcoded in the baselinedata file is ugly!
-** TODO add a readme file to make github happy.
+** DONE add a readme file to make github happy.
 ** DONE get weather for multiple days
 ** DONE remove current 'day' parameter
 ** DONE add numdays parameter
@@ -12,14 +12,13 @@ Minimum features needed to let me use the tool in my own game
 ** DONE need to calc current weather condition (sunny/partly-cloudy/cloudy)
 ** DONE determine if there is precip for a date
 ** DONE add to baseline and add acceptance test.
+** DONE determine if there is record high/low
+** DONE wind speed / direction
 ** TODO determine what sort of precip it is
 *** DONE just baseline data of precip
-*** TODO special precip too
 *** TODO determine continuing precip
 *** TODO determine rainbow
-** DONE determine if there is record high/low
 ** standardize output like my sheets
-** wind speed / direction
 ** check for requirements on precip
 ** need to calc diff in base temp caused by latitude
 ** duration of record high/low
@@ -29,6 +28,7 @@ Minimum features needed to let me use the tool in my own game
 * phase of moons for date
 * sunrise/sunset times for date
 * modify weather given terrain
+* interpret special precipitation (based upon terrain)
 * report wind chill temp
 * report high wind effect table
 * report affects of precip

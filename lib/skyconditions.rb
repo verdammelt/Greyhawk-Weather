@@ -6,7 +6,8 @@ class SkyConditions
     @condition_ranges = RangeHash.new(hash , :none)
   end
   
-  def condition(roll)
+  def condition(roller)
+    roll = roller.roll(100)
     roll = 100 if roll == 0
     @condition_ranges[roll]
   end

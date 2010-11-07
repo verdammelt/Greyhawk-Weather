@@ -23,4 +23,8 @@ class PrecipitationInfo
     @chance_of_rainbow = chance_of_rainbow
     @not_allowed_in = not_allowed_in
   end
+
+  def to_s
+    @name
+  end
 end
