@@ -1,35 +1,38 @@
-* DONE determine base temp given the month
-* DONE calc date's temp range given date
-* DONE Need a good way to store/define the baseline data - hardcoded in the baselinedata file is ugly!
-* DONE add a readme file to make github happy.
-* DONE get weather for multiple days
+* Release #1
+Minimum features needed to let me use the tool in my own game
+** DONE determine base temp given the month
+** DONE calc date's temp range given date
+** DONE Need a good way to store/define the baseline data - hardcoded in the baselinedata file is ugly!
+** TODO add a readme file to make github happy.
+** DONE get weather for multiple days
 ** DONE remove current 'day' parameter
 ** DONE add numdays parameter
 ** DONE get weather from beginning of month for that many days
-* DONE handle getting number of days overlapping with another month
-* DONE need to calc current weather condition (sunny/partly-cloudy/cloudy)
-* DONE determine if there is precip for a date
+** DONE handle getting number of days overlapping with another month
+** DONE need to calc current weather condition (sunny/partly-cloudy/cloudy)
+** DONE determine if there is precip for a date
 ** DONE add to baseline and add acceptance test.
-* TODO determine what sort of precip it is
-** DONE just baseline data of precip
-** TODO special precip too
-** TODO report effects of precip
-** TODO determine continuing precip
-* DONE determine if there is record high/low
-* duration of record high/low
-* need to calc diff in base temp caused by latitude
+** TODO determine what sort of precip it is
+*** DONE just baseline data of precip
+*** TODO special precip too
+*** TODO determine continuing precip
+*** TODO determine rainbow
+** DONE determine if there is record high/low
+** standardize output like my sheets
+** wind speed / direction
+** check for requirements on precip
+** need to calc diff in base temp caused by latitude
+** duration of record high/low
+
 * need to calc diff in sun-rise/-set time caused by longitude
 * need to calc diff in base temp caused by altitude
 * phase of moons for date
 * sunrise/sunset times for date
 * modify weather given terrain
 * report wind chill temp
-* wind speed / direction
 * report high wind effect table
-* check for requirements on precip
 * report affects of precip
 * humidity
 * arbitrary start day
 * greyhawk calendar festivals
 * rearrange code a bit (helper classes in subdirectories etc.)
-* standardize output like my sheets
