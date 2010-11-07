@@ -11,7 +11,7 @@
 * DONE determine if there is precip for a date
 ** DONE add to baseline and add acceptance test.
 * TODO determine what sort of precip it is
-** TODO just baseline data of precip
+** DONE just baseline data of precip
 ** TODO special precip too
 ** TODO report effects of precip
 ** TODO determine continuing precip
@@ -30,3 +30,4 @@
 * humidity
 * arbitrary start day
 * greyhawk calendar festivals
+* rearrange code a bit (helper classes in subdirectories etc.)

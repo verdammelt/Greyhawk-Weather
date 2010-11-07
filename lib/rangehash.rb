@@ -5,7 +5,7 @@ class RangeHash
   end
   
   def [](key)
-    (@key_value_hash.find{ |kv| kv[0].include?(key)} || @default_item)[1]
+    (@key_value_hash.find{ |kv| kv[0] === key } || @default_item)[1]
   end
   
   def to_s

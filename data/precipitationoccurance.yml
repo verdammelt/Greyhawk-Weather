@@ -107,6 +107,6 @@
   :chance_of_rainbow: 5
   :not_allowed_in: [:desert, :dust]
 
-!ruby/range 100..100:
+100:
   :name: Special
 

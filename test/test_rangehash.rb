@@ -29,4 +29,10 @@ class TestRangeHash < Test::Unit::TestCase
     r = RangeHash.new(hash, default_value)
     assert_equal(:quux, r[4568])
   end
+  
+  def test_bare_number_as_key
+    hash = { 0..2 => :foo, 3 => :bar, 4..6 => :baz}
+    r = RangeHash.new(hash)
+    assert_equal(:bar, r[3])
+  end
 end
