@@ -18,7 +18,7 @@ Minimum features needed to let me use the tool in my own game
 *** DONE just baseline data of precip
 *** TODO determine continuing precip
 *** TODO determine rainbow
-** standardize output like my sheets
+** DONE standardize output like my sheets
 ** check for requirements on precip
 ** need to calc diff in base temp caused by latitude
 ** duration of record high/low
