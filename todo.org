@@ -35,4 +35,4 @@ Minimum features needed to let me use the tool in my own game
 * humidity
 * arbitrary start day
 * greyhawk calendar festivals
-* rearrange code a bit (helper classes in subdirectories etc.)
+* DONE rearrange code a bit (helper classes in subdirectories etc.)

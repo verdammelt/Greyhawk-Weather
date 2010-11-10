@@ -1,6 +1,6 @@
 require 'test/unit'
 
-require 'rangehash'
+require 'util/rangehash'
 
 class TestRangeHash < Test::Unit::TestCase
   def test_construction_from_hash

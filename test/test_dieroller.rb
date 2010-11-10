@@ -1,6 +1,6 @@
 require 'test/unit'
 
-require 'dieroller'
+require 'util/dieroller'
 
 $next_defined_random_number = 0
 $max_arg_to_rand = -1

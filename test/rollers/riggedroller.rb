@@ -1,4 +1,4 @@
-require 'dieroller'
+require 'util/dieroller'
 
 class RiggedRoller < DieRoller
   def initialize(roll)

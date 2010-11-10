@@ -1,4 +1,4 @@
-require 'rangehash'
+require 'util/rangehash'
 
 class SkyConditions
   def initialize (clear_range, partly_range, cloudy_range)

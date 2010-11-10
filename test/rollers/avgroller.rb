@@ -1,4 +1,4 @@
-require 'dieroller'
+require 'util/dieroller'
 
 class AvgRoller < DieRoller
   def roll(nsides, modifier=0)

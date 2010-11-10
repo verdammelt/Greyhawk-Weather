@@ -1,4 +1,4 @@
-require 'rangehash'
+require 'util/rangehash'
 
 class PrecipitationOccurance < RangeHash
   def self.load(file)

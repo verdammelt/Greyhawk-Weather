@@ -1,5 +1,5 @@
 require 'baselinedata'
-require 'dieroller'
+require 'util/dieroller'
 require 'weathergenerator'
 
 class GreyhawkWeatherGenerator
