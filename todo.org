@@ -16,14 +16,16 @@ Minimum features needed to let me use the tool in my own game
 ** DONE wind speed / direction
 ** TODO determine what sort of precip it is
 *** DONE just baseline data of precip
-*** TODO refactor to have array of precip
+*** DONE refactor to have array of precip
 *** DONE refactor to have null precip
-*** TODO determine continuing precip
-*** TODO determine rainbow
+*** TODO new Precipitation class seprate from PrecipitationInfo.  New class embodies the actual precipitation
+*** determine continuing precip
+*** determine rainbow
 ** DONE standardize output like my sheets
 ** check for requirements on precip
 ** need to calc diff in base temp caused by latitude
 ** duration of record high/low
+
 
 * need to calc diff in sun-rise/-set time caused by longitude
 * need to calc diff in base temp caused by altitude
