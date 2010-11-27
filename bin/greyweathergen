@@ -3,7 +3,7 @@
 # arbitrary defaults: Weather will be generated for 1st of Planting
 
 $month ||= 4
-$numdays ||= 7
+$numdays ||= 28
 
 require 'YAML'
 require 'GreyhawkWeatherGenerator'
