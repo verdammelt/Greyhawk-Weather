@@ -18,7 +18,7 @@ class TestWeather < Test::Unit::TestCase
   
   def test_determines_precipitation
     assert_not_nil(true, Weather.new(create_month, RiggedRoller.new(10)).precipitation)
-    assert_nil(Weather.new(create_month, RiggedRoller.new(70)).precipitation)
+    assert_equal(NullPrecipitation.new().name, Weather.new(create_month, RiggedRoller.new(70)).precipitation.name)
   end
   
   def test_deals_with_record_highs

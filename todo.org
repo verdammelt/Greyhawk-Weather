@@ -16,6 +16,8 @@ Minimum features needed to let me use the tool in my own game
 ** DONE wind speed / direction
 ** TODO determine what sort of precip it is
 *** DONE just baseline data of precip
+*** TODO refactor to have array of precip
+*** TODO refactor to have null precip
 *** TODO determine continuing precip
 *** TODO determine rainbow
 ** DONE standardize output like my sheets

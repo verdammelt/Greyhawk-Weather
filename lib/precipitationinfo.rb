@@ -28,3 +28,9 @@ class PrecipitationInfo
     @name
   end
 end
+
+class NullPrecipitation < PrecipitationInfo
+  def initialize()
+    super "No Precipitation"
+  end
+end

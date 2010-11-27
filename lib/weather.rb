@@ -16,7 +16,7 @@ class Weather
     @sky_conditions = month.sky_conditions(dieroller)
     @record_temp = record_temp
 
-    @precipitation = nil
+    @precipitation = NullPrecipitation.new()
     if month.precipitation(dieroller)
       @precipitation = precipitation_occurance_chart[dieroller.roll(100)]
     end
