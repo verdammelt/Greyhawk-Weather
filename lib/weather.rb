@@ -18,12 +18,6 @@ class Weather
 
     @precipitation = precipitation_occurance_chart.type(month.has_precipitation(dieroller) ? dieroller : NullDieRoller.new())
 
-    # if month.has_precipitation(dieroller)
-    #   @precipitation = precipitation_occurance_chart[dieroller.roll(100)]
-    # else 
-    #   @precipitation = Array.new().push(NullPrecipitation.new())
-    # end
-
     @wind = Wind.new(dieroller)
   end
   
