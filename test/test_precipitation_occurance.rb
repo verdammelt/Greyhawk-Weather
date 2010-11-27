@@ -17,4 +17,9 @@ class TestPrecipitationOccurance < Test::Unit::TestCase
     precip_occur = PrecipitationOccurance.load("data/precipitationoccurance.yml")
     assert_equal("Snowstorm, light", precip_occur.type(RiggedRoller.new(13))[0].name)
   end
+  
+  def test_default_value_is_null_precipitation
+    precip_occur = PrecipitationOccurance.new()
+    assert_instance_of(NullPrecipitation, precip_occur.type(RiggedRoller.new(13))[0])
+  end
 end

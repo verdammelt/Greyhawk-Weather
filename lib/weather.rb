@@ -10,16 +10,19 @@ class Weather
   attr_reader :wind
   
   def initialize (month, dieroller, 
-                  precipitation_occurance_chart=PrecipitationOccurance.new({ 0..100 => PrecipitationInfo.new({ :name => "None"})}),
+                  precipitation_occurance_chart=PrecipitationOccurance.new({ 0..100 => NullPrecipitation.new() }),
                   record_temp=nil)
     @temperature_range = month.temp_range(dieroller, record_temp)
     @sky_conditions = month.sky_conditions(dieroller)
     @record_temp = record_temp
 
-    @precipitation = Array.new().push(NullPrecipitation.new())
-    if month.precipitation(dieroller)
-      @precipitation = precipitation_occurance_chart[dieroller.roll(100)]
-    end
+    @precipitation = precipitation_occurance_chart.type(month.has_precipitation(dieroller) ? dieroller : NullDieRoller.new())
+
+    # if month.has_precipitation(dieroller)
+    #   @precipitation = precipitation_occurance_chart[dieroller.roll(100)]
+    # else 
+    #   @precipitation = Array.new().push(NullPrecipitation.new())
+    # end
 
     @wind = Wind.new(dieroller)
   end

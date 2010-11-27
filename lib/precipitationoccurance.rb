@@ -7,8 +7,8 @@ class PrecipitationOccurance < RangeHash
     PrecipitationOccurance.new(data)
   end
 
-  def initialize(args)
-    super args, :none
+  def initialize(args = nil)
+    super args, NullPrecipitation.new()
   end
   
   def type(dieroller)

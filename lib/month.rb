@@ -18,7 +18,7 @@ class Month
     @temp_range.range(dieroller, record_temp)
   end
   
-  def precipitation (dieroller)
+  def has_precipitation (dieroller)
     @precipitation_chance >= dieroller.roll(100)
   end
 end

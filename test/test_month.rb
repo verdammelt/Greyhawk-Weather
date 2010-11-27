@@ -30,7 +30,7 @@ class TestMonth < Test::Unit::TestCase
   
   def test_determines_precipitation
     month = Month.new(@null_temp_range, @null_sky_conditions, 50)
-    assert_equal(true, month.precipitation(RiggedRoller.new(10)))
-    assert_equal(false, month.precipitation(RiggedRoller.new(70)))
+    assert_equal(true, month.has_precipitation(RiggedRoller.new(10)))
+    assert_equal(false, month.has_precipitation(RiggedRoller.new(70)))
   end
 end
