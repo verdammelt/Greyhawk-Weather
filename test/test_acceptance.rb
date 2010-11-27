@@ -15,7 +15,7 @@ class TestAcceptanceTests < Test::Unit::TestCase
     weather = weather_generator.days[0]
     assert_equal(44..63, weather.temperature_range)
     assert_equal(:partly_cloudy, weather.sky_conditions)
-    assert_equal(NullPrecipitation.new().name, weather.precipitation.name)
+    assert_equal(NullPrecipitation.new().name, weather.precipitation[0].name)
   end
 
   def test_generate_weather_for_goodmonth
@@ -23,6 +23,6 @@ class TestAcceptanceTests < Test::Unit::TestCase
     weather = weather_generator.days[0]
     assert_equal(66..83, weather.temperature_range)
     assert_equal(:partly_cloudy, weather.sky_conditions)
-    assert_equal(NullPrecipitation.new().name, weather.precipitation.name)
+    assert_equal(NullPrecipitation.new().name, weather.precipitation[0].name)
   end
 end

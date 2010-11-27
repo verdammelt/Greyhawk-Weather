@@ -13,6 +13,6 @@ class PrecipitationOccurance < RangeHash
   
   def type(dieroller)
     roll = dieroller.roll(100)
-    self[roll]
+    Array.new().push(self[roll])
   end
 end
