@@ -3,7 +3,7 @@ require 'precipitationoccurance'
 require 'precipitationinfo'
 require 'wind'
 
-class Weather
+class SingleDayWeather
   attr_reader :temperature_range
   attr_reader :sky_conditions
   attr_reader :precipitation

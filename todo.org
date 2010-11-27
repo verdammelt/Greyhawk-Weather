@@ -26,6 +26,7 @@ Minimum features needed to let me use the tool in my own game
 ** need to calc diff in base temp caused by latitude
 ** duration of record high/low
 
+** determine windspeed from precipitation
 
 * need to calc diff in sun-rise/-set time caused by longitude
 * need to calc diff in base temp caused by altitude
@@ -35,7 +36,7 @@ Minimum features needed to let me use the tool in my own game
 * interpret special precipitation (based upon terrain)
 * report wind chill temp
 * report high wind effect table
-* report affects of precip
+* report affects of precip (duration etc.)
 * humidity
 * arbitrary start day
 * greyhawk calendar festivals

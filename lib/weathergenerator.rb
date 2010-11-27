@@ -1,4 +1,4 @@
-require 'weather'
+require 'singledayweather'
 
 class WeatherGenerator
   attr_reader :days
@@ -23,7 +23,7 @@ class WeatherGenerator
   
   private
   def make_weather(month, dieroller, precipitation_occurance_chart)
-    Weather.new(month, dieroller, precipitation_occurance_chart, check_record_high_low(dieroller))
+    SingleDayWeather.new(month, dieroller, precipitation_occurance_chart, check_record_high_low(dieroller))
   end
   
   def check_record_high_low(dieroller)
