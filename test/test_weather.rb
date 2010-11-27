@@ -21,7 +21,7 @@ class TestWeather < Test::Unit::TestCase
                  Weather.new(create_month, RiggedRoller.new(10), 
                              PrecipitationOccurance.new({ 0..100 => PrecipitationInfo.new("precip")})).
                    precipitation[0].name)
-    assert_equal(NullPrecipitation.new().name, 
+    assert_equal(NullPrecipitationInfo.new().name, 
                  Weather.new(create_month, RiggedRoller.new(70),
                              PrecipitationOccurance.new({ 0..100 => PrecipitationInfo.new("precip")})).
                  precipitation[0].name)

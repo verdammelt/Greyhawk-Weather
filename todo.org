@@ -14,13 +14,13 @@ Minimum features needed to let me use the tool in my own game
 ** DONE add to baseline and add acceptance test.
 ** DONE determine if there is record high/low
 ** DONE wind speed / direction
-** TODO determine what sort of precip it is
+** DONE determine what sort of precip it is
 *** DONE just baseline data of precip
 *** DONE refactor to have array of precip
 *** DONE refactor to have null precip
-*** TODO new Precipitation class seprate from PrecipitationInfo.  New class embodies the actual precipitation
-*** determine continuing precip
-*** determine rainbow
+*** DONE new Precipitation class seprate from PrecipitationInfo.  New class embodies the actual precipitation
+*** DONE determine continuing precip
+*** DONE determine rainbow
 ** DONE standardize output like my sheets
 ** check for requirements on precip
 ** need to calc diff in base temp caused by latitude
@@ -40,3 +40,5 @@ Minimum features needed to let me use the tool in my own game
 * arbitrary start day
 * greyhawk calendar festivals
 * DONE rearrange code a bit (helper classes in subdirectories etc.)
+* precipitation occurance chart should not be publically a ranged hash?
+* ranged hash sorting is bad stuff (and not yet complete!)

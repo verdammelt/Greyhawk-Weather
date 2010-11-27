@@ -35,4 +35,22 @@ class TestRangeHash < Test::Unit::TestCase
     r = RangeHash.new(hash)
     assert_equal(:bar, r[3])
   end
+  
+  def test_sorted_keys_simple_case
+    hash = { 7..10 => :baz, 0..2 => :foo, 4..6 => :bar}
+    r = RangeHash.new(hash)
+    assert_equal([0..2, 4..6, 7..10], r.sorted_keys)
+  end
+
+  def test_sorted_keys_overlapping
+    hash = { 5..10 => :baz, 0..2 => :foo, 4..6 => :bar}
+    r = RangeHash.new(hash)
+    assert_equal([0..2, 4..6, 5..10], r.sorted_keys)
+  end
+
+  def test_sorted_keys_with_bare_fixnums
+    hash = { 5..10 => :baz, 0..2 => :foo, 3 => :quux, 4..6 => :bar}
+    r = RangeHash.new(hash)
+    assert_equal([0..2, 3, 4..6, 5..10], r.sorted_keys)
+  end
 end

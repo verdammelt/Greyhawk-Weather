@@ -1,10 +1,11 @@
 require 'util/dieroller'
 
 class RiggedRoller < DieRoller
-  def initialize(roll)
-    @roll = roll
+  def initialize(*rolls)
+    @last_roll = rolls.pop
+    @rolls = rolls.reverse
   end
   def roll(nSides, modifier=0)
-    @roll + modifier
+    (@rolls.pop || @last_roll) + modifier
   end
 end
