@@ -4,24 +4,29 @@ class WeatherGenerator
   attr_reader :days
 
   def initialize (baselinedata, precipitation_occurance_chart, month_index, num_days, dieroller)
-    @days = Array.new
-
+    month_for_each_day = make_months_for_days_array(baselinedata, month_index, num_days)
+    @days = month_for_each_day.map { |month| make_weather month, dieroller, precipitation_occurance_chart}
+  end
+  
+  private
+  def make_months_for_days_array(baselinedata, month_index, num_days)
+    months = Array.new
     while num_days > 0
       if (num_days > 28)
-        28.times { @days.push make_weather(baselinedata.month(month_index), dieroller, precipitation_occurance_chart) }
+        28.times { months.push baselinedata.month(month_index) }
         num_days -= 28
         month_index += 1
         if month_index > baselinedata.num_months
           month_index = 1
         end
       else
-        num_days.times { @days.push make_weather(baselinedata.month(month_index), dieroller, precipitation_occurance_chart) }
+        num_days.times { months.push baselinedata.month(month_index) }
         num_days = 0
       end
     end
+    months
   end
-  
-  private
+
   def make_weather(month, dieroller, precipitation_occurance_chart)
     SingleDayWeather.new(month, dieroller, precipitation_occurance_chart, check_record_high_low(dieroller))
   end

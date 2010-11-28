@@ -15,10 +15,7 @@ class SingleDayWeather
     @temperature_range = month.temp_range(dieroller, record_temp)
     @sky_conditions = month.sky_conditions(dieroller)
     @record_temp = record_temp
-
-    
     @precipitation = precipitation_occurance_chart.type(month.has_precipitation(dieroller) ? dieroller : NullDieRoller.new())
-
     @wind = Wind.new(dieroller)
   end
   
