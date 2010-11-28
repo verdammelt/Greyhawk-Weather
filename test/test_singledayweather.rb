@@ -37,6 +37,14 @@ class TestWeather < Test::Unit::TestCase
     assert_equal("9SE", SingleDayWeather.new(create_month, AvgRoller.new).wind.to_s)
   end
   
+  def test_checks_for_temp_ranges_on_weather
+    assert_equal(NullPrecipitationInfo.new().name, 
+                 SingleDayWeather.new(create_month, RiggedRoller.new(10),
+                             PrecipitationOccurance.new({ 0..100 => PrecipitationInfo.create_from_data({ :name => "precip",
+                                                                                                         :min_temp => 100})})).
+                                      precipitation[0].name)
+  end
+  
   private
   def create_month
     Month.new(TemperatureRange.new(13, [10,6], [8,4]), SkyConditions.new((01..23), (24..50), (51..100)), 50)

@@ -14,9 +14,25 @@ class PrecipitationOccurance < RangeHash
     super args, NullPrecipitationInfo.new()
   end
   
-  def type(dieroller)
+  def type(dieroller, temp_range = nil)
     roll = dieroller.roll(100)
     precip_info = self[roll]
+
+    if temp_range
+      if (precip_info.min_temp && !(precip_info.min_temp <= temp_range.last)) ||
+          (precip_info.max_temp && !(precip_info.max_temp >= temp_range.first))
+        roll = dieroller.roll(100)
+        precip_info = self[roll]
+
+      if (precip_info.min_temp && !(precip_info.min_temp <= temp_range.last)) ||
+          (precip_info.max_temp && !(precip_info.max_temp >= temp_range.first))
+        roll = dieroller.roll(100)
+        precip_info = NullPrecipitationInfo.new()
+      end
+
+      end
+    end
+    
     all_precip = Array.new().push(Precipitation.new(precip_info, dieroller))
 
     while precip_info.chance_to_continue > 0 && dieroller.roll(100) <= precip_info.chance_to_continue
@@ -33,6 +49,7 @@ class PrecipitationOccurance < RangeHash
     all_precip
   end
   
+  private
   def line_above(precip_info)
     key = @key_value_hash.index(precip_info)
     index_of_key = sorted_keys().index(key)
