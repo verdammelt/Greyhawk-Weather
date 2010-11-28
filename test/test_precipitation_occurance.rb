@@ -61,6 +61,17 @@ class TestPrecipitationOccurance < Test::Unit::TestCase
                  precip_occur.type(RiggedRoller.new(10, 10), 60..70)[0].name)
   end
   
+  def test_checks_temp_ranges_for_continuing_weather
+    precip_occur = PrecipitationOccurance.new({ (0..20) => create_precip_info({ :name => :cold, 
+                                                                                :chance_to_continue  => 10,
+                                                                                :max_temp => 20}),
+                                                (21..100) => create_precip_info({ :name => :hot, 
+                                                                                  :chance_to_continue => 10,
+                                                                                  :min_temp => 40})})
+    assert_equal([:hot, :hot],
+                 precip_occur.type(RiggedRoller.new(35, 5, 1, 20), 30..50).map{ |p| p.name })
+  end
+  
   private 
   def create_precip_info(hash)
     PrecipitationInfo.create_from_data(hash)
