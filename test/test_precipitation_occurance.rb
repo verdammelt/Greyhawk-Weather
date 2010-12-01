@@ -72,6 +72,20 @@ class TestPrecipitationOccurance < Test::Unit::TestCase
                  precip_occur.type(RiggedRoller.new(35, 5, 1, 20), 30..50).map{ |p| p.name })
   end
   
+  def test_checks_terrain_for_precipitation
+    precip_occur = PrecipitationOccurance.new({ (0..20) => create_precip_info({ :name => :not, :not_allowed_in => [:desert]})})
+    assert_equal(NullPrecipitationInfo.new().name, precip_occur.type(RiggedRoller.new(10), nil, :desert).first.name)
+  end
+
+  def test_checks_terrain_for_continuin_weather
+    precip_occur = PrecipitationOccurance.new({ (0..20) => create_precip_info({ :name => :cold, 
+                                                                                :chance_to_continue  => 10,
+                                                                                :not_allowed_in => [:desert]}),
+                                                (21..100) => create_precip_info({ :name => :hot, 
+                                                                                  :chance_to_continue => 10 })})
+    assert_equal(:hot, precip_occur.type(RiggedRoller.new(35, 5, 1, 20), nil, :desert)[1].name)
+  end
+
   private 
   def create_precip_info(hash)
     PrecipitationInfo.create_from_data(hash)

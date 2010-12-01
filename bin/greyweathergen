@@ -4,11 +4,12 @@
 
 $month ||= 4
 $numdays ||= 28
+$terrain ||= "plains"
 
 require 'YAML'
 require 'GreyhawkWeatherGenerator'
 
-weather_generator = GreyhawkWeatherGenerator.create_weather_generator $month.to_i, $numdays.to_i
+weather_generator = GreyhawkWeatherGenerator.create_weather_generator $month.to_i, $numdays.to_i, DieRoller.new, $terrain.to_sym
 
 i=0
 weather_generator.days.each do |d|

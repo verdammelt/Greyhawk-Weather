@@ -21,7 +21,7 @@ class PrecipitationInfo
     @max_temp = max_temp
     @chance_to_continue = chance_to_continue || 0
     @chance_of_rainbow = chance_of_rainbow || 0
-    @not_allowed_in = not_allowed_in
+    @not_allowed_in = not_allowed_in || []
   end
 end
 

@@ -20,10 +20,10 @@ class TestWeatherGenerator < Test::Unit::TestCase
                                           { :temp_range => TemperatureRange.new(100, [4, 0], [4, 0]),
                                             :sky_conditions => { :clear => (0..0), :partly => (0..0), :cloudy => (0..0) },
                                             :precipitation_chance => 70 }]
-    @testprecipchart = PrecipitationOccurance.new({ 0..25 => PrecipitationInfo.new({ :name => "Rain"}),
-                                                    26..50 => PrecipitationInfo.new({ :name => "Snow"}),
-                                                    51..75 => PrecipitationInfo.new({ :name => "Hail"}),
-                                                    76..100 => PrecipitationInfo.new({ :name => "Smog"})})
+    @testprecipchart = PrecipitationOccurance.new({ 0..25 => PrecipitationInfo.create_from_data({ :name => "Rain", :not_allowed_in => [:desert]}),
+                                                    26..50 => PrecipitationInfo.create_from_data({ :name => "Snow"}),
+                                                    51..75 => PrecipitationInfo.create_from_data({ :name => "Hail"}),
+                                                    76..100 => PrecipitationInfo.create_from_data({ :name => "Smog"})})
   end
 
   def test_generator_creates_num_days_of_weather
@@ -50,5 +50,10 @@ class TestWeatherGenerator < Test::Unit::TestCase
   def test_checks_for_record_high_low
     generator = WeatherGenerator.new @testbaseline, @testprecipchart, 1, 1, RiggedRoller.new(1)
     assert_equal(-3..-1, generator.days.first.temperature_range, "Extreme record low")
+  end
+  
+  def test_uses_terrain_for_precipitation_check
+    generator = WeatherGenerator.new @testbaseline, @testprecipchart, 1, 1, RiggedRoller.new(1), :desert
+    assert_equal(NullPrecipitationInfo.new.name, generator.days.first.precipitation.first.name)
   end
 end

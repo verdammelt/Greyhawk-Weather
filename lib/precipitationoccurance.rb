@@ -14,36 +14,37 @@ class PrecipitationOccurance < RangeHash
     super args, NullPrecipitationInfo.new()
   end
   
-  def type(dieroller, temp_range = nil)
-    get_all_precip initial_precip(dieroller, temp_range), dieroller, temp_range
+  def type(dieroller, temp_range = nil, terrain = :plains)
+    get_all_precip initial_precip(dieroller, temp_range, terrain), dieroller, temp_range, terrain
   end
   
   private
-  def invalid_precip?(precip_info, temp_range)
-    temp_range and 
+  def invalid_precip?(precip_info, temp_range, terrain)
+    (temp_range and 
       ((precip_info.min_temp and !(precip_info.min_temp <= temp_range.last)) or
-       (precip_info.max_temp and !(precip_info.max_temp >= temp_range.first)))
+       (precip_info.max_temp and !(precip_info.max_temp >= temp_range.first)))) or
+      (terrain and precip_info.not_allowed_in.include?(terrain))
   end
 
-  def initial_precip (dieroller, temp_range)
+  def initial_precip (dieroller, temp_range, terrain)
     precip_info = self[dieroller.roll(100)]
 
-    if invalid_precip?(precip_info, temp_range)
+    if invalid_precip?(precip_info, temp_range, terrain)
         precip_info = self[dieroller.roll(100)]
         
-      if invalid_precip?(precip_info, temp_range)
+      if invalid_precip?(precip_info, temp_range, terrain)
           precip_info = NullPrecipitationInfo.new()
       end
     end
     precip_info
   end
 
-  def get_all_precip (precip_info, dieroller, temp_range)
+  def get_all_precip (precip_info, dieroller, temp_range, terrain)
     all_precip = Array.new().push(Precipitation.new(precip_info, dieroller))
 
     while precip_continues?(dieroller, precip_info)
       next_precip_info = next_precip_info(dieroller, precip_info)
-      precip_info = next_precip_info unless invalid_precip?(next_precip_info, temp_range)
+      precip_info = next_precip_info unless invalid_precip?(next_precip_info, temp_range, terrain)
       all_precip.push(Precipitation.new(precip_info, dieroller))
     end
 
