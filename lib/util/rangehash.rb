@@ -14,18 +14,19 @@ class RangeHash
   
   def sorted_keys
     @key_value_hash.keys.sort do |a, b|
-      aval = a
-      if a.instance_of?(Range)
-        aval = a.first
-      end
-      
-      bval = b
-      if b.instance_of?(Range)
-        bval = b.first
-      end
-      
-      aval <=> bval
+      sort_key(a) <=> sort_key(b)
     end
   end
+
+  private
+  
+  def sort_key(a)
+    # return a if Fixnum === a
+    # return a.first if Range === a
+
+    return a.first if Range === a
+    a
+  end
+
 end
 

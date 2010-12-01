@@ -23,7 +23,7 @@ Minimum features needed to let me use the tool in my own game
 *** DONE determine rainbow
 ** DONE standardize output like my sheets
 ** check for requirements on precip
-*** TODO temp range
+*** DONE temp range
 *** TODO terrain
 ** need to calc diff in base temp caused by latitude
 ** duration of record high/low
