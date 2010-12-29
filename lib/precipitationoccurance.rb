@@ -1,3 +1,5 @@
+require 'YAML'
+
 require 'util/rangehash'
 
 require 'precipitationinfo'

@@ -1,3 +1,4 @@
+require 'YAML'
 
 require 'temperaturerange'
 require 'skyconditions'
