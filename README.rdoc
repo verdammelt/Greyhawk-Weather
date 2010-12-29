@@ -1,10 +1,15 @@
 = greyhawkweather
 
-* http://github.com/#{github_username}/#{project_name}
+* http://github.com/verdammelt/Greyhawk-Weather
 
 == DESCRIPTION:
 
-#{IO.open("README"){|io| io.readlines()}}
+This program will assist in the generation of randomized weather for
+the Greyhawk AD&D Campaign setting.  It uses data from the Greyhawk
+Boxed set (circa 1983) for AD&D 1e.
+
+The todo.org file lists the "stories" for this project in prioritzed
+order. If a story is marked DONE then it is in theory working.
 
 == FEATURES/PROBLEMS:
 
@@ -19,7 +24,7 @@ bin\greyweatheren -month=<monthnum>
 
 == INSTALL:
 
-sudo gem install
+sudo gem install greyhawkweather
 
 == LICENSE:
 
