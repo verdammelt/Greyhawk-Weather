@@ -1,3 +1,7 @@
+=== 0.0.2 2010-12-29
+
+* Prep work for releasing current work as gem
+
 === 0.0.1 2010-12-29
 
 * 1 major enhancement:
