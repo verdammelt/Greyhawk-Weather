@@ -6,7 +6,11 @@ $month ||= 4
 $numdays ||= 28
 $terrain ||= "plains"
 
+require 'rubygems'
+gem 'rangehash'
+
 require 'YAML'
+require File.dirname(__FILE__) + '/../lib/greyhawkweather'
 require 'GreyhawkWeatherGenerator'
 
 weather_generator = GreyhawkWeatherGenerator.create_weather_generator $month.to_i, $numdays.to_i, DieRoller.new, $terrain.to_sym
