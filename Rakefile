@@ -14,7 +14,7 @@ $hoe = Hoe.spec 'greyhawkweather' do
   self.developer 'Mark Simpson', 'verdammelt@gmail.com'
   self.post_install_message = 'PostInstall.txt'
   self.rubyforge_name       = self.name
-  # self.extra_deps         = [['activesupport','>= 2.0.2']]
+  self.extra_deps         = [['rangehash','>= 0.0.1']]
 
 end
 

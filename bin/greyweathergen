@@ -1,4 +1,4 @@
-#!/usr/bin/ruby -I ./lib -s
+#!/usr/bin/ruby -s
 
 # arbitrary defaults: Weather will be generated for 1st of Planting
 

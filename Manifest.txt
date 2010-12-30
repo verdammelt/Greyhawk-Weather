@@ -17,7 +17,6 @@ lib/singledayweather.rb
 lib/skyconditions.rb
 lib/temperaturerange.rb
 lib/util/dieroller.rb
-lib/util/rangehash.rb
 lib/weathergenerator.rb
 lib/wind.rb
 script/console
@@ -32,7 +31,6 @@ test/test_helper.rb
 test/test_month.rb
 test/test_precipitation.rb
 test/test_precipitation_occurance.rb
-test/test_rangehash.rb
 test/test_singledayweather.rb
 test/test_sky_conditions.rb
 test/test_temperature_range.rb
