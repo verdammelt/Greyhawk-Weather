@@ -30,7 +30,8 @@ Minimum features needed to let me use the tool in my own game
 
 ** determine windspeed from precipitation
 
-** TODO clean up after gem-ify work, and removal of rangehash
+** DONE clean up after gem-ify work, and removal of rangehash
+** TODO clean warnings from test runs
 * fix infinite loop in weather generation (probaly only a problem in tests)
 * need to calc diff in sun-rise/-set time caused by longitude
 * need to calc diff in base temp caused by altitude
