@@ -1,4 +1,4 @@
-require 'YAML'
+require 'YAML' unless defined? :YAML
 
 require 'temperaturerange'
 require 'skyconditions'

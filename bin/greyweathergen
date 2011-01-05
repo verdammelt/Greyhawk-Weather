@@ -9,7 +9,6 @@ $terrain ||= "plains"
 require 'rubygems'
 gem 'rangehash'
 
-require 'YAML'
 require File.dirname(__FILE__) + '/../lib/greyhawkweather'
 require 'GreyhawkWeatherGenerator'
 
