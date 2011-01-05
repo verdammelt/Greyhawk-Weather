@@ -15,7 +15,7 @@ $hoe = Hoe.spec 'greyhawkweather' do
   self.post_install_message = 'PostInstall.txt'
   self.rubyforge_name       = self.name
   self.extra_deps         = [['rangehash','>= 0.0.1']]
-
+  self.extra_rdoc_files	= ["README.rdoc"]
 end
 
 require 'newgem/tasks'
