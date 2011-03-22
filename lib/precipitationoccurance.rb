@@ -1,4 +1,4 @@
-require 'YAML' unless defined? :YAML
+require 'YAML' unless defined? YAML
 
 require 'rangehash'
 

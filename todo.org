@@ -25,26 +25,29 @@ Minimum features needed to let me use the tool in my own game
 ** DONE check for requirements on precip
 *** DONE temp range
 *** DONE terrain
-** need to calc diff in base temp caused by latitude
-** duration of record high/low
-
-** determine windspeed from precipitation
-
 ** DONE clean up after gem-ify work, and removal of rangehash
-** TODO clean warnings from test runs
-* fix infinite loop in weather generation (probaly only a problem in tests)
-* need to calc diff in sun-rise/-set time caused by longitude
-* need to calc diff in base temp caused by altitude
-* phase of moons for date
-* sunrise/sunset times for date
-* modify weather given terrain
-* interpret special precipitation (based upon terrain)
+** DONE rearrange code a bit (helper classes in subdirectories etc.)
+* Release #1.5
+** TODO Switch to rspec
+* Release #2
+** need to calc diff in base temp caused by latitude
+** modify weather given terrain
+** duration of record high/low
+** determine windspeed from precipitation
+** clean warnings from test runs
+** report affects of precip (duration etc.)
+** greyhawk calendar festivals
+
+* humidity
 * report wind chill temp
 * report high wind effect table
-* report affects of precip (duration etc.)
-* humidity
+* need to calc diff in base temp caused by altitude
+* fix infinite loop in weather generation (probaly only a problem in tests)
+* need to calc diff in sun-rise/-set time caused by longitude
+* phase of moons for date
+* sunrise/sunset times for date
+* interpret special precipitation (based upon terrain)
 * arbitrary start day
-* greyhawk calendar festivals
-* DONE rearrange code a bit (helper classes in subdirectories etc.)
 * precipitation occurance chart should not be publically a ranged hash?
 * ranged hash sorting is bad stuff (and not yet complete!)
+
