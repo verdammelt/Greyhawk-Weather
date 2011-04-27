@@ -12,9 +12,9 @@ class PrecipitationOccurance < RangeHash
     PrecipitationOccurance.new(data)
   end
 
-  def initialize(args = nil)
-    super NullPrecipitationInfo.new
-    merge!(args || {})
+  def initialize(args = {})
+    super NullPrecipitationInfo.new()
+    merge!(args)
   end
   
   def type(dieroller, temp_range = nil, terrain = :plains)
@@ -68,17 +68,16 @@ class PrecipitationOccurance < RangeHash
 
   def line_above(precip_info)
     prev_key = sorted_keys[[0,index_of_precip(precip_info)-1].max]
-    [prev_key]
+    self[prev_key]
   end
   
   def line_below(precip_info)
     next_key = sorted_keys[[sorted_keys.length,index_of_precip(precip_info)+1].min]
-    [next_key]
+    self[next_key]
   end
   
   def index_of_precip(precip_info)
     key = index(precip_info)
     index_of_key = sorted_keys.index(key)
   end
-  
 end
