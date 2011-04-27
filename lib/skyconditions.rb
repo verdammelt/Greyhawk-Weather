@@ -3,7 +3,8 @@ require 'rangehash'
 class SkyConditions
   def initialize (clear_range, partly_range, cloudy_range)
     hash = { clear_range => :clear, partly_range => :partly_cloudy, cloudy_range => :cloudy}
-    @condition_ranges = RangeHash.new(hash , :none)
+    @condition_ranges = RangeHash.new(:none)
+    @condition_ranges.merge! hash
   end
   
   def condition(roller)
