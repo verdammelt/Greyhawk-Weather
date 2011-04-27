@@ -1,3 +1,6 @@
+=== 0.0.6 2011-04-26
+* Fixing problems due to RangeHash update
+
 === 0.0.5 2011-01-04
 
 * Fixing warnings when running the script
