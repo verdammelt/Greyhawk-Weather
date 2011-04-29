@@ -18,7 +18,7 @@ class BaselineData
   end
 
   def month(monthnum)
-    month_data = @all_data[monthnum -1]
+    month_data = @all_data[monthnum - 1]
     Month.new(month_data[:temp_range], make_skyconditions(month_data[:sky_conditions]), month_data[:precipitation_chance])
   end
   
