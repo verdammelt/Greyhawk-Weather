@@ -11,7 +11,8 @@ describe "Acceptance Tests" do
     end
 
     context "generates weather with" do
-      let(:weather) { GreyhawkWeatherGenerator.create_weather_generator(4, 1, roller).days[0] }
+      let(:options) { WeatherGeneratorOptions.new ({:month => 4, :num_days => 1, :dieroller => roller}) }
+      let(:weather) { GreyhawkWeatherGenerator.create_weather_generator(options).days[0] }
       subject { weather }
       its(:temperature_range) { should == (44..63) }
       its(:sky_conditions) {  should == :partly_cloudy }
@@ -28,13 +29,16 @@ describe "Acceptance Tests" do
     
     it "should generate multiple days" do
       num_days = 3
-      generator = GreyhawkWeatherGenerator.create_weather_generator(4, num_days, roller)
+      options = WeatherGeneratorOptions.new ({:dieroller => roller, :num_days  => num_days})
+      generator = GreyhawkWeatherGenerator.create_weather_generator(options)
+
       generator.days.should have(num_days).items
       generator.days.should_not include(nil)
     end
     
     it "generates weather for the given month" do
-      generator = GreyhawkWeatherGenerator.create_weather_generator(8, 1, roller)
+      options = WeatherGeneratorOptions.new ({:dieroller => roller, :month => 8})
+      generator = GreyhawkWeatherGenerator.create_weather_generator(options)
       weather = generator.days[0]
       weather.temperature_range.should == (66..83)
       weather.sky_conditions.should == :partly_cloudy
@@ -43,7 +47,8 @@ describe "Acceptance Tests" do
     it "generates weather given a terrain" do
       roller = mock(:DieRoller)
       roller.stub(:roll) { |nsides, modifier| 01 }
-      generator = GreyhawkWeatherGenerator.create_weather_generator(1, 1, roller, :desert)
+      options = WeatherGeneratorOptions.new ({:dieroller => roller, :terrain => :desert})
+      generator = GreyhawkWeatherGenerator.create_weather_generator(options)
       weather = generator.days[0]
       weather.precipitation[0].name.should == NullPrecipitationInfo.new().name
     end

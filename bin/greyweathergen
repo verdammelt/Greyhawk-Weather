@@ -12,7 +12,10 @@ gem 'rangehash'
 require File.dirname(__FILE__) + '/../lib/greyhawkweather'
 require 'GreyhawkWeatherGenerator'
 
-weather_generator = GreyhawkWeatherGenerator.create_weather_generator $month.to_i, $numdays.to_i, DieRoller.new, $terrain.to_sym
+options = WeatherGeneratorOptions.new({:month => $month.to_i,
+                                        :num_days => $numdays.to_i,
+                                        :terrain => $terrain.to_sym})
+weather_generator = GreyhawkWeatherGenerator.create_weather_generator options
 
 i=0
 weather_generator.days.each do |d|
