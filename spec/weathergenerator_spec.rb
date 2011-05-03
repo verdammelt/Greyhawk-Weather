@@ -1,4 +1,5 @@
 require 'weathergenerator'
+require 'options'
 
 describe 'WeatherGenerator' do
   let(:roller) do
@@ -27,32 +28,37 @@ describe 'WeatherGenerator' do
   end
 
   it 'creates num_days of weather' do
-    generator = WeatherGenerator.new baseline, nil, 1, 13, roller
+    options = WeatherGeneratorOptions.new({:month => 1, :num_days => 13, :dieroller => roller })
+    generator = WeatherGenerator.new baseline, nil, options
     generator.days.length.should == 13
   end
 
-  it 'generates weather accorss month boundaries' do
+  it 'generates weather across month boundaries' do
     baseline.stub(:num_months) { 2 }
 
-    generator = WeatherGenerator.new baseline, nil, 1, 31, roller
+    options = WeatherGeneratorOptions.new({:month => 1, :num_days => 31, :dieroller => roller })
+    generator = WeatherGenerator.new baseline, nil, options
     generator.days.select {|d| d.temperature_range.begin == 1 }.length.should == 28
     generator.days.select {|d| d.temperature_range.begin == 2 }.length.should == 3
   end
 
   it 'generates days across year boundaries' do
     baseline.stub(:num_months) { 2 }
-    generator = WeatherGenerator.new baseline, nil, 2, 29, roller
+    options = WeatherGeneratorOptions.new({:month => 2, :num_days => 29, :dieroller => roller })
+    generator = WeatherGenerator.new baseline, nil, options
     generator.days.last.temperature_range.begin.should == 1
   end
 
   it 'checks for record high and low' do
     roller.stub(:roll) { 1 }
-    generator = WeatherGenerator.new baseline, nil, 1, 1, roller
+    options = WeatherGeneratorOptions.new({:month => 1, :num_days => 1, :dieroller => roller })
+    generator = WeatherGenerator.new baseline, nil, options
     generator.days.first.record.should == [:low, :low, :low]
   end
 
   it 'uses terrain for precipitation check' do
-    generator = WeatherGenerator.new baseline, nil, 1, 1, roller, :desert
+    options = WeatherGeneratorOptions.new({:month => 1, :num_days => 1, :dieroller => roller, :terrain => :desert })
+    generator = WeatherGenerator.new baseline, nil, options
     generator.days.first.terrain.should == :desert
   end
 end

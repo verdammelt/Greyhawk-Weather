@@ -3,9 +3,11 @@ require 'singledayweather'
 class WeatherGenerator
   attr_reader :days
 
-  def initialize (baselinedata, precipitation_occurance_chart, month_index, num_days, dieroller, terrain = :plains)
-    month_for_each_day = make_months_for_days_array(baselinedata, month_index, num_days)
-    @days = month_for_each_day.map { |month| make_weather month, dieroller, precipitation_occurance_chart, terrain}
+  def initialize (baselinedata, precipitation_occurance_chart, options)
+    month_for_each_day = make_months_for_days_array(baselinedata, options.month, options.num_days)
+    @days = month_for_each_day.map do |month|
+      make_weather month, options.dieroller, precipitation_occurance_chart, options.terrain
+    end
   end
   
   private
