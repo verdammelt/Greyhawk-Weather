@@ -2,6 +2,7 @@ require 'month'
 require 'precipitationoccurance'
 require 'precipitationinfo'
 require 'wind'
+require 'util/dieroller'
 
 class SingleDayWeather
   attr_reader :temperature_range
