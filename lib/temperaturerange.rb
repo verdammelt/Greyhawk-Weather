@@ -15,9 +15,17 @@ class TemperatureRange
     record = make_record_array record
 
     base = @base
-    base = base + (record.find_all{ |r| r == :high}.length * (@high_adj[0] + @high_adj[1]))
-    base = base - (record.find_all{ |r| r == :low}.length * (@low_adj[0] + @low_adj[1]))
+    base = base + record_adjustment(record, :high, @high_adj)
+    base = base - record_adjustment(record, :low, @low_adj)
     base
+  end
+
+  def count_records(record, type)
+	  record.find_all{|r| r == type}.length
+  end
+
+  def record_adjustment(record, type, adjustment_values)
+    (count_records(record, type) * (adjustment_values[0] + adjustment_values[1]))
   end
   
   def make_record_array(record)

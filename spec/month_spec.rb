@@ -27,7 +27,7 @@ describe Month do
   private
   def make_roller(roll)
     roller = mock(:DieRoller)
-    roller.stub(:roll) { |n, m = 0| roll + m}
+    roller.stub(:roll) { |n, m| roll + (m || 0)}
     roller
   end
 end 

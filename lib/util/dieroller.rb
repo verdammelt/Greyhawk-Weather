@@ -1,11 +1,11 @@
 class DieRoller
-  def roll(nSides, modifier=0)
-    rand(nSides) + 1 + modifier
+  def roll(num_sides, modifier=0)
+    rand(num_sides) + 1 + modifier
   end
 end
 
 class NullDieRoller
-  def roll(nSides, modifier=0)
+  def roll(num_sides, modifier=0)
     -1
   end
 end

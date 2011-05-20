@@ -18,7 +18,7 @@ describe 'SkyConditions' do
   end
 
   def mock_roller (n)
-    mock_roller = mock (:DieRoller)
+    mock_roller = mock(:DieRoller)
     mock_roller.stub(:roll).and_return n
     mock_roller
   end

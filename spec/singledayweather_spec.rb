@@ -42,7 +42,7 @@ describe SingleDayWeather do
 
   it "determines wind" do
     roller = mock(:DieRoller)
-    roller.stub(:roll){|n, m=0| n/2+m}
+    roller.stub(:roll){|n, m| n/2+(m||0)}
     SingleDayWeather.new(mock(:Month).as_null_object, roller).wind.to_s.should == "9SE"
   end
 end 

@@ -77,7 +77,7 @@ class PrecipitationOccurance < RangeHash
   end
   
   def index_of_precip(precip_info)
-    key = index(precip_info)
+    key = key(precip_info)
     index_of_key = sorted_keys.index(key)
   end
 end

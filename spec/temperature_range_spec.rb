@@ -3,7 +3,7 @@ require 'temperaturerange'
 describe "TemperatureRange" do
   let(:roller) do
     roller = mock(:DieRoller)
-    roller.stub(:roll) {|n, m = 0| n/2 + m}
+    roller.stub(:roll) {|n, m|  n/2 + (m||0)}
     roller
   end
 

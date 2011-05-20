@@ -38,7 +38,7 @@ describe 'WeatherGenerator' do
 
     options = WeatherGeneratorOptions.new({:month => 1, :num_days => 31, :dieroller => roller })
     generator = WeatherGenerator.new baseline, nil, options
-    generator.days.select {|d| d.temperature_range.begin == 1 }.length.should == 28
+    generator.days.select {|d| d.temperature_range.begin == 1 }.should have(28).items
     generator.days.select {|d| d.temperature_range.begin == 2 }.length.should == 3
   end
 
