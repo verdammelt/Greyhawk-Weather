@@ -16,8 +16,8 @@ describe PrecipitationOccurance do
 
     precip_occur = PrecipitationOccurance.new({(0..20) => snowstorm,
                                                 (21..100) => rainstorm})
-    precip_occur.type(make_roller(13))[0].name.should == :light_snowstorm
-    precip_occur.type(make_roller(57))[0].name.should == :light_rainstorm
+    precip_occur.type(make_roller(13))[0].name.should eq(:light_snowstorm)
+    precip_occur.type(make_roller(57))[0].name.should eq(:light_rainstorm)
   end
 
   it "loads from file" do

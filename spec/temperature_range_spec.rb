@@ -15,17 +15,17 @@ describe "TemperatureRange" do
   end
 
   it "handles record high" do
-    subject.range(roller, :high).should == (14..26)
+    subject.range(roller, :high).should eq((14..26))
     subject.range(roller, [:high, :high]).should == (24..36)
   end
 
   it "handles record low" do
-    subject.range(roller, :low).should == (-6..6)
+    subject.range(roller, :low).should eq((-6..6))
     subject.range(roller, [:low, :low]).should == (-16..-4)
   end
 
   it "handles a mix of records" do
-    subject.range(roller, [:high, :low]).should == (4..16)
+    subject.range(roller, [:high, :low]).should eq((4..16))
     subject.range(roller, [:high, :low, :high]).should == (14..26)
   end
 end

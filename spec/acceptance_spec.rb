@@ -39,8 +39,8 @@ describe "Acceptance Tests" do
       options = WeatherGeneratorOptions.new({:dieroller => roller, :month => 8})
       generator = GreyhawkWeatherGenerator.create_weather_generator(options)
       weather = generator.days[0]
-      weather.temperature_range.should == (66..83)
-      weather.sky_conditions.should == :partly_cloudy
+      weather.temperature_range.should eq((66..83))
+      weather.sky_conditions.should eq(:partly_cloudy)
     end
 
     it "generates weather given a terrain" do

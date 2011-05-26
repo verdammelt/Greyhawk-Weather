@@ -1,11 +1,12 @@
+require 'spec_helper'
 require 'month'
 
 describe Month do
   it "uses sky condition data to determine current conditions" do
     month = Month.new(nil, SkyConditions.new((0..34), (35..65), (66..100)))
-    month.sky_conditions(make_roller(25)).should == :clear
-    month.sky_conditions(make_roller(50)).should == :partly_cloudy
-    month.sky_conditions(make_roller(75)).should == :cloudy
+    month.sky_conditions(make_roller(25)).should eq(:clear)
+    month.sky_conditions(make_roller(50)).should eq(:partly_cloudy)
+    month.sky_conditions(make_roller(75)).should eq(:cloudy)
   end
 
   it "uses temp range data to determine current conditions" do
