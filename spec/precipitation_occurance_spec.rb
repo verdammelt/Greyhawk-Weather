@@ -30,7 +30,6 @@ describe PrecipitationOccurance do
   end
 
   it "checks for and computes continuing precipitation" do
-	  pending("currently broken")
     snowstorm = create_test_precipitation(:light_snowstorm)
     rainstorm = create_test_precipitation(:light_rainstorm)
     precip_occur = PrecipitationOccurance.new({(0..20) => snowstorm,
@@ -58,9 +57,9 @@ describe PrecipitationOccurance do
   it "checks temp ranges for continuing weather" 
 
   private
-  def make_roller(*roll)
+  def make_roller(*rolls)
     roller = mock(:DieRoller)
-    roller.stub(:roll).and_return(roll.first)
+    roller.stub(:roll).and_return(*rolls)
     roller
   end
 
@@ -69,7 +68,7 @@ describe PrecipitationOccurance do
     precip.stub(:not_allowed_in).and_return([])
     precip.stub(:name).and_return(name)
     precip.stub(:chance_of_rainbow).and_return(0)
-    precip.stub(:chance_to_continue).and_return(0)
+    precip.stub(:chance_to_continue).and_return(10)
     precip
   end
 end 
