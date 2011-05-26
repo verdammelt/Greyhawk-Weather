@@ -1,3 +1,4 @@
+require 'spec_helper'
 require 'util/dieroller'
 
 describe DieRoller do
