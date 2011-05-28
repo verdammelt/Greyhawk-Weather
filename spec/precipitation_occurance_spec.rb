@@ -38,7 +38,7 @@ describe PrecipitationOccurance do
       [:light_rainstorm, :light_snowstorm, :light_rainstorm, :light_rainstorm]
   end
 
-  it "checks terrain for precipsitation" do
+  it "checks terrain for precipitation" do
     precip = mock(:PrecipitationInfo)
     precip.stub(:not_allowed_in).and_return([:desert])
 
@@ -46,15 +46,81 @@ describe PrecipitationOccurance do
     precip_occur.type(make_roller(10), nil, :desert).first.name.should == NullPrecipitationInfo.new.name
   end
 
-  it "does no reroll if temp_range is ok"
+  it "does no reroll if temp_range is ok" do
+    precip = mock(:PrecipitationInfo)
+    precip.stub(:min_temp).and_return(10)
+    precip.stub(:max_temp).and_return(50)
+    precip.stub(:not_allowed_in).and_return([])
+    precip.stub(:name).and_return("")
+    precip.stub(:chance_to_continue).and_return(0)
+    precip.stub(:chance_of_rainbow).and_return(0)
+    precip_occur = PrecipitationOccurance.new({(0..20) => precip})
 
-  it "rerolls if temp is too low"
+    roller = make_roller(10)
+    roller.should_receive(:roll).exactly(1) 
+    
+    precip_occur.type(roller, (20..40))
+  end
 
-  it "rerolls if temp is too high"
+  it "rerolls if temp is too low" do
+    precip = mock(:PrecipitationInfo)
+    precip.stub(:min_temp).and_return(20)
+    precip.stub(:max_temp).and_return(20)
+    precip.stub(:not_allowed_in).and_return([])
+    precip.stub(:name).and_return("")
+    precip.stub(:chance_to_continue).and_return(0)
+    precip.stub(:chance_of_rainbow).and_return(0)
+    precip_occur = PrecipitationOccurance.new({(0..20) => precip})
 
-  it "rerolls once only for bad weather"
+    roller = make_roller(10)
+    roller.should_receive(:roll).exactly(2) 
+    
+    precip_occur.type(roller, (0..10))
+  end
 
-  it "checks temp ranges for continuing weather" 
+  it "rerolls if temp is too high" do
+    precip = mock(:PrecipitationInfo)
+    precip.stub(:min_temp).and_return(20)
+    precip.stub(:max_temp).and_return(20)
+    precip.stub(:not_allowed_in).and_return([])
+    precip.stub(:name).and_return("")
+    precip.stub(:chance_to_continue).and_return(0)
+    precip.stub(:chance_of_rainbow).and_return(0)
+    precip_occur = PrecipitationOccurance.new({(0..20) => precip})
+
+    roller = make_roller(10)
+    roller.should_receive(:roll).exactly(2)
+
+    precip_occur.type(roller, (50..60))
+     
+  end
+
+  it "checks temp ranges for continuing weather" do
+    precipcold = mock(:PrecipitationInfo)
+    precipcold.stub(:min_temp).and_return(20)
+    precipcold.stub(:max_temp).and_return(20)
+    precipcold.stub(:not_allowed_in).and_return([])
+    precipcold.stub(:name).and_return("cold")
+    precipcold.stub(:chance_to_continue).and_return(0)
+    precipcold.stub(:chance_of_rainbow).and_return(0)
+
+    precipwarm = mock(:PrecipitationInfo)
+    precipwarm.stub(:min_temp).and_return(30)
+    precipwarm.stub(:max_temp).and_return(30)
+    precipwarm.stub(:not_allowed_in).and_return([])
+    precipwarm.stub(:name).and_return("warm")
+    precipwarm.stub(:chance_to_continue).and_return(20)
+    precipwarm.stub(:chance_of_rainbow).and_return(0)
+
+    precip_occur = PrecipitationOccurance.new({(0..20) => precipcold, (30..50) => precipwarm})
+     
+    roller = make_roller(40, 10, 10)
+    roller.should_receive(:roll).exactly(3)
+
+    precipitations = precip_occur.type(roller, (30..30))
+    precipitations.collect { |p|  p.name }.should == ["warm", "No Precipitation"]
+  end
+
 
   private
   def make_roller(*rolls)
