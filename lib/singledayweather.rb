@@ -13,8 +13,9 @@ class SingleDayWeather
   def initialize (month, dieroller, 
                   precipitation_occurance_chart=PrecipitationOccurance.new({ 0..100 => NullPrecipitationInfo.new() }),
                   record_temp=nil,
-                  terrain = :plains)
-    @temperature_range = month.temp_range(dieroller, record_temp)
+                  terrain = :plains,
+                  latitude = 40)
+    @temperature_range = adjust_for_latitude(month.temp_range(dieroller, record_temp), latitude)
     @sky_conditions = month.sky_conditions(dieroller)
     @record_temp = record_temp
     @precipitation =
@@ -25,6 +26,12 @@ class SingleDayWeather
   
   def inspect
     "#{@record_temp} #{@temperature_range} #{@sky_conditions} #{@precipitation} #{@wind}"
+  end
+
+  private
+  def adjust_for_latitude (range, latitude)
+    adjustment = (latitude-40)*2
+    Range.new(range.first+adjustment, range.last+adjustment)
   end
 end
 

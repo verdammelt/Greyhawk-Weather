@@ -3,14 +3,21 @@ require 'singledayweather'
 require 'util/dieroller'
 
 describe "Base temperature modified by latitude" do
-  let(:test_range) {  10..15 }
-  let(:month) {  double :Month, :temp_range => test_range, :sky_conditions => nil, :has_precipitation => false }
-  let(:roller) {  double :DieRoller, :roll => 0 }
-  let(:precip) {  double :PrecipitationOccurance, :type => nil }
-  let(:single_day_weather) {  SingleDayWeather.new(month, roller, precip, nil, :plains) }
-
   it "should increase base temp by 2 degrees Farenheit for each degree latitude below 40" do
-    pending("need to do refactoring first")
-    single_day_weather.temperature_range.should == Range.new(test_range.first+10, test_range.last+10)
-  end 
+    month = mock(:Month).as_null_object
+    month.stub(:temp_range).and_return((10..20))
+    roller = mock(:DieRoller)
+    roller.stub(:roll).and_return(10)
+    weather = SingleDayWeather.new(month, roller, PrecipitationOccurance.new, nil, :plains, 30)
+    weather.temperature_range.should == (-10..0)
+  end
+
+  it "should decrease base temp by 2 degrees Farenheit for each degree latitude above 40" do
+    month = mock(:Month).as_null_object
+    month.stub(:temp_range).and_return((10..20))
+    roller = mock(:DieRoller)
+    roller.stub(:roll).and_return(10)
+    weather = SingleDayWeather.new(month, roller, PrecipitationOccurance.new, nil, :plains, 50)
+    weather.temperature_range.should == (30..40)
+  end
 end
