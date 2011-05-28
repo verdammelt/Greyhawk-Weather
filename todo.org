@@ -30,7 +30,7 @@ Minimum features needed to let me use the tool in my own game
 * Release #1.5
 ** DONE Switch to rspec
 * Release #2
-** DONE need to calc diff in base temp caused by latitude
+** TODO need to calc diff in base temp caused by latitude
 ** modify weather given terrain
 ** duration of record high/low
 ** determine windspeed from precipitation
