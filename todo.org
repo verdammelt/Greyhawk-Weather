@@ -28,9 +28,9 @@ Minimum features needed to let me use the tool in my own game
 ** DONE clean up after gem-ify work, and removal of rangehash
 ** DONE rearrange code a bit (helper classes in subdirectories etc.)
 * Release #1.5
-** TODO Switch to rspec
+** DONE Switch to rspec
 * Release #2
-** need to calc diff in base temp caused by latitude
+** DONE need to calc diff in base temp caused by latitude
 ** modify weather given terrain
 ** duration of record high/low
 ** determine windspeed from precipitation
