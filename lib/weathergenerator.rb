@@ -33,14 +33,18 @@ class WeatherGenerator
     SingleDayWeather.new(month, dieroller, precipitation_occurance_chart, check_record_high_low(dieroller), terrain)
   end
   
+  RECORD_HIGH_LOW_RANGES = {
+    1 => [:low, :low, :low],
+    2 => [:low, :low],
+    3..4 => :low,
+    97..98 => :high,
+    99 => [:high, :high],
+    100 => [:high, :high, :high]
+  }
+
   def check_record_high_low(dieroller)
     record_high_low_range = RangeHash.new(:normal)
-    record_high_low_range.merge!({ 1 => [:low, :low, :low],
-                                   2 => [:low, :low],
-                                   3..4 => :low,
-                                   97..98 => :high,
-                                   99 => [:high, :high],
-                                   100 => [:high, :high, :high]})
+    record_high_low_range.merge!(RECORD_HIGH_LOW_RANGES)
     record_high_low_range[dieroller.roll(100)]
   end
 end

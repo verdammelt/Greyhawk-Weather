@@ -3,10 +3,8 @@ require 'greyhawkweathergenerator'
 
 describe "Acceptance Tests" do
   context GreyhawkWeatherGenerator do
-    let(:roller) do 
-      r = mock(:DieRoller)
-      r.stub(:roll) { |nsides, modifier| nsides/2 + (modifier || 0) }
-      r
+    let(:roller) do
+      avg_roller_mock
     end
 
     context "generates weather with" do
@@ -44,8 +42,7 @@ describe "Acceptance Tests" do
     end
 
     it "generates weather given a terrain" do
-      roller = mock(:DieRoller)
-      roller.stub(:roll) { |nsides, modifier| 01 }
+      roller = rigged_roller_mock 1
       options = WeatherGeneratorOptions.new({:dieroller => roller, :terrain => :desert})
       generator = GreyhawkWeatherGenerator.create_weather_generator(options)
       weather = generator.days[0]

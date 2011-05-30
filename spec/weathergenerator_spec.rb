@@ -4,9 +4,7 @@ require 'options'
 
 describe 'WeatherGenerator' do
   let(:roller) do
-    roller = mock(:DieRoller)
-    roller.stub(:roll) { |nsides, modifier| nsides/2 + (modifier || 0) }
-    roller
+    avg_roller_mock
   end
   let(:baseline) do
     baseline = mock(:BaselineData)
