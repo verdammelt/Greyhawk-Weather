@@ -25,16 +25,17 @@ describe SingleDayWeather do
     precip = mock(:PrecipitationInfo)
 
     precipitation = mock(:PrecipitationOccurance).as_null_object
-    precipitation.should_recieve(:type).with(roller, month, anything())
-    precipitation.stub(:type).and_return([precip])
-    SingleDayWeather.new(month, roller, precipitation).precipitation[0].should == precip
+    precipitation.should_receive(:type).with(roller, anything(), anything()).and_return([precip])
+    SingleDayWeather.new(month, roller, precipitation).precipitation.should == [precip]
   end
 
   it "deals with record highs" do
     roller = rigged_roller_mock 0
     month = mock(:Month).as_null_object
     month.should_recieve(:temp_range).with(anything(), anything(), :high)
-    SingleDayWeather.new(month, roller, mock(:PrecipitationOccurance).as_null_object, :high)
+    precip_occur =  mock(:PrecipitationOccurance).as_null_object
+    precip_occur.stub(:type)
+    SingleDayWeather.new(month, roller, precip_occur, :high)
   end
 
   it "determines wind" do

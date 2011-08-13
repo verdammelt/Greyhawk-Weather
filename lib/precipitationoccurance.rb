@@ -67,17 +67,21 @@ class PrecipitationOccurance < RangeHash
   end
 
   def line_above(precip_info)
-    prev_key = sorted_keys[[0,index_of_precip(precip_info)-1].max]
+    current_index = index_of_precip(precip_info) || 0
+    prev_key = sorted_keys[[0,current_index-1].max]
     self[prev_key]
   end
   
   def line_below(precip_info)
-    next_key = sorted_keys[[sorted_keys.length,index_of_precip(precip_info)+1].min]
+    current_index = index_of_precip(precip_info) || sorted_keys.length
+    index = [sorted_keys.length,current_index+1].min
+    next_key = sorted_keys[index]
     self[next_key]
   end
   
   def index_of_precip(precip_info)
-    key = key(precip_info)
-    index_of_key = sorted_keys.index(key)
+    pair = select {|k, v| v == precip_info }.first
+    key = pair.first
+    index_of_key = sorted_keys.index(key) 
   end
 end
