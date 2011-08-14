@@ -1,7 +1,6 @@
 #!/usr/bin/ruby -s
 
 # arbitrary defaults: Weather will be generated for 1st of Planting
-
 $month ||= 4
 $numdays ||= 28
 $terrain ||= "plains"
@@ -12,9 +11,11 @@ gem 'rangehash'
 require File.dirname(__FILE__) + '/../lib/greyhawkweather'
 require 'GreyhawkWeatherGenerator'
 
-options = WeatherGeneratorOptions.new({:month => $month.to_i,
-                                        :num_days => $numdays.to_i,
-                                        :terrain => $terrain.to_sym})
+options = WeatherGeneratorOptions.new({
+  :month => $month.to_i,
+  :num_days => $numdays.to_i,
+  :terrain => $terrain.to_sym
+})
 weather_generator = GreyhawkWeatherGenerator.create_weather_generator options
 
 i=0

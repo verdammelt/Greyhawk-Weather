@@ -1,5 +1,3 @@
-require 'YAML' unless defined? YAML
-
 require 'temperaturerange'
 require 'skyconditions'
 require 'month'

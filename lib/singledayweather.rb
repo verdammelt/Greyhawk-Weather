@@ -9,7 +9,7 @@ class SingleDayWeather
   attr_reader :sky_conditions
   attr_reader :precipitation
   attr_reader :wind
-  
+
   def initialize (month, dieroller, 
                   precipitation_occurance_chart=PrecipitationOccurance.new({ 0..100 => NullPrecipitationInfo.new() }),
                   record_temp=nil,
