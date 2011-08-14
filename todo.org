@@ -38,6 +38,7 @@ Minimum features needed to let me use the tool in my own game
 ** report affects of precip (duration etc.)
 ** greyhawk calendar festivals
 
+* rearrange code to go into greyhawkweather directory
 * humidity
 * report wind chill temp
 * report high wind effect table

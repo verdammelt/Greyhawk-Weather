@@ -1,3 +1,8 @@
+=== 0.0.7 2011-08-14
+* switching to use rspec
+* switching to use bundler
+* various cleanups based upon flog/flay etc.
+
 === 0.0.6 2011-04-26
 * Fixing problems due to RangeHash update
 
