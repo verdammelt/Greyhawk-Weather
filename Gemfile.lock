@@ -1,14 +1,14 @@
 PATH
   remote: .
   specs:
-    greyhawkweather (0.0.7)
+    greyhawkweather (0.0.8)
       rangehash (>= 0.0.5)
 
 GEM
   remote: http://rubygems.org/
   specs:
     diff-lcs (1.1.2)
-    rangehash (0.0.5)
+    rangehash (0.0.6)
     rcov (0.9.10)
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
