@@ -1,4 +1,4 @@
-#!/usr/bin/ruby -s
+#!/usr/bin/ruby -s -w
 
 # arbitrary defaults: Weather will be generated for 1st of Planting
 $month ||= 4
