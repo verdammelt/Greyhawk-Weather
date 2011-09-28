@@ -1,3 +1,5 @@
+require 'yaml'
+
 require 'temperaturerange'
 require 'skyconditions'
 require 'month'
