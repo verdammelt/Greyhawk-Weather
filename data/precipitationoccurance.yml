@@ -3,13 +3,15 @@
   :name: Blizzard, heavy
   :max_temp: 10
   :chance_to_continue: 5
-  :not_allowed_in: [:desert]
+  :not_allowed_in: 
+    - :desert
 
 !ruby/range 03..05:
   :name: Blizzard
   :max_temp: 20
   :chance_to_continue: 10
-  :not_allowed_in: [:desert]
+  :not_allowed_in: 
+    - :desert
 
 !ruby/range 06..10:
   :name: Snowstorm, heavy
@@ -31,7 +33,9 @@
   :name: Hailstorm
   :max_temp: 65
   :chance_to_continue: 10
-  :not_allowed_in: [:desert, :dust]
+  :not_allowed_in: 
+    - :desert
+    - :dust
 
 !ruby/range 28..30:
   :name: Fog, heavy
@@ -39,7 +43,9 @@
   :max_temp: 60
   :chance_to_continue: 25
   :chance_of_rainbow: 1
-  :not_allowed_in: [:desert, :dust]
+  :not_allowed_in: 
+    - :desert
+    - :dust
 
 !ruby/range 31..38:
   :name: Fog, light
@@ -47,7 +53,8 @@
   :max_temp: 70
   :chance_to_continue: 30
   :chance_of_rainbow: 3
-  :not_allowed_in: [:desert]
+  :not_allowed_in: 
+    - :desert
 
 !ruby/range 39..40:
   :name: Mist
@@ -84,28 +91,36 @@
   :min_temp: 40
   :chance_to_continue: 20
   :chance_of_rainbow: 10
-  :not_allowed_in: [:desert, :plains]
+  :not_allowed_in: 
+    - :desert
+    - :plains
 
 !ruby/range 90..94:
   :name: Monsoon
   :min_temp: 55
   :chance_to_continue: 30
   :chance_of_rainbow: 5
-  :not_allowed_in: [:desert, :dust, :plains]
+  :not_allowed_in: 
+    - :desert
+    - :dust
+    - :plains
 
 !ruby/range 95..97:
   :name: Gale
   :min_temp: 40
   :chance_to_continue: 15
   :chance_of_rainbow: 10
-  :not_allowed_in: [:desert]
+  :not_allowed_in: 
+    - :desert
 
 !ruby/range 98..99:
   :name: Hurrican or Typhoon
   :min_temp: 55
   :chance_to_continue: 20
   :chance_of_rainbow: 5
-  :not_allowed_in: [:desert, :dust]
+  :not_allowed_in: 
+    - :desert
+    - :dust
 
 100:
   :name: Special
